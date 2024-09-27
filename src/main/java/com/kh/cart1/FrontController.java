@@ -21,7 +21,7 @@ public class FrontController extends HttpServlet {
         String action = request.getParameter("action");
         Action actionInstance = null;
         
-        System.out.println("ddd");
+        System.out.println("dddddddd");
         
         if ("viewCart".equals(action)) {
             actionInstance = new ViewCartAction();
