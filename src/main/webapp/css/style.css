@@ -318,7 +318,7 @@ button {
   background: #d8d8d8;
 }
 
-/* 모바일 카테고리 전체 영역 */
+
 .home-category {
   display: flex;
   flex-flow: column nowrap;
@@ -770,8 +770,7 @@ button {
 .header-upper__lists {
   position: absolute;
   z-index: 999;
-  top: 3.6rem;
-  right: 0;
+  top: 70px;
   background: #fff;
   border: 1px solid #dbdbdb;
   border-radius: 6px;
