@@ -20,7 +20,9 @@ public class FrontController extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String action = request.getParameter("action");
         Action actionInstance = null;
-
+        
+        System.out.println("sss");
+        
         if ("viewCart".equals(action)) {
             actionInstance = new ViewCartAction();
         } else {
