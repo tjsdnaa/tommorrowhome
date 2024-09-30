@@ -7,11 +7,8 @@
         <typeAlias type="com.kh.web.cart.dto.ProductDTO" alias="productdto"/>
         <typeAlias type="com.kh.web.cart.dto.CartProdDTO" alias="cartproddto"/>
         <typeAlias type="com.kh.web.cart.dto.CartDTO" alias="cartdto"/>
-<<<<<<< HEAD
         <typeAlias type="com.kh.web.cart.dto.JoinProdDTO" alias="joinproddto"/>
-=======
         <typeAlias type="com.kh.web.user.dao.UsersDTO" alias="usersdto"/>
->>>>>>> refs/heads/login_page
     </typeAliases>
     <environments default="development">
         <environment id="development">
@@ -28,11 +25,8 @@
         <mapper resource="com/kh/web/sql/ProductMapper.xml"/>
         <mapper resource="com/kh/web/sql/CartProdMapper.xml"/>
         <mapper resource="com/kh/web/sql/CartMapper.xml"/>
-<<<<<<< HEAD
         <mapper resource="com/kh/web/sql/JoinProd.xml"/>
-=======
         <mapper resource="com/kh/web/sql/user.xml"/>
->>>>>>> refs/heads/login_page
     </mappers>
 </configuration>
 
