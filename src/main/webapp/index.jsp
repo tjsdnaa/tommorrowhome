@@ -65,8 +65,8 @@
   </div>
   <a href=""><i class="fas fa-shopping-cart"></i></a>
   <ul>
-    <li><a href="">로그인</a></li>
-    <li><a href="">회원가입</a></li>
+    <li><a href="/user/UserLogin.us">로그인</a></li>
+    <li><a href="/user/UserJoin.us">회원가입</a></li>
     <li><a href="">고객센터</a></li>
     <li>
       <button class="header-upper__writeBt">글쓰기</button>
