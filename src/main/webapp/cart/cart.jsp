@@ -1,12 +1,15 @@
+<%@page import="com.kh.cart.web.dao.JoinProdDAO"%>
+<%@page import="com.kh.web.cart.dto.JoinProdDTO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ page import="java.util.List" %>
 <%@ page import="com.kh.web.cart.dto.CartProdDTO" %>
 <%@ page import="com.kh.cart.service.CartService" %>
 <%@ page import="com.kh.web.cart.dto.ProductDTO" %>
 <%
-    CartService cartService = new CartService();
+CartService cartService = new CartService();
     int cartNum = 1; // 예시값
-    List<CartProdDTO> cartProducts = cartService.getCartProducts(cartNum);
+    System.out.println(new JoinProdDAO().getCartProducts(cartNum));
+    List<JoinProdDTO> joinProducts = new JoinProdDAO().getCartProducts(cartNum);
     int totalAmount = 0; // 장바구니 총 금액 초기화
 %>
 <!DOCTYPE html>
@@ -15,7 +18,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>장바구니</title>
-    <link rel="stylesheet" type="text/css" href="<%= request.getContextPath() %>/css/styles.css">
+    <link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/css/styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&family=Poppins:wght@300&display=swap" rel="stylesheet" />
@@ -59,23 +62,22 @@
                 <th>삭제</th>
             </tr>
             <%
-                if (cartProducts != null && !cartProducts.isEmpty()) {
-                    for (CartProdDTO product : cartProducts) {
-                        ProductDTO productDTO = product.getProduct(); // CartProdDTO의 product 객체 가져오기
-                        if (productDTO != null) {
-                            int totalPrice = product.getProdCnt() * product.getProdPrice(); // 수량에 맞는 총 가격 계산
-                            totalAmount += totalPrice; // 장바구니 총 금액에 추가
+            if (joinProducts != null && !joinProducts.isEmpty()) {
+                                for (JoinProdDTO product : joinProducts) {
+                                    if (product != null) {
+                                        int totalPrice = product.getPROD_CNT() * product.getPROD_PRICE(); // 수량에 맞는 총 가격 계산
+                                        totalAmount += totalPrice; // 장바구니 총 금액에 추가
             %>
             <tr>
                 <td>
-    			<img src="<%= request.getContextPath() + productDTO.getProdImage() %>" alt="<%= productDTO.getProdName() %>" class="product-image">
+    			<img src="<%= request.getContextPath() + product.getPROD_IMAGE() %>" alt="<%= product.getPROD_NAME() %>" class="product-image">
 				</td>
-                <td><%= productDTO.getProdName() %></td>
+                <td><%=product.getPROD_NAME() %></td>
                 <td>
                     <form action="updateCart.jsp" method="post">
                         <input type="hidden" name="cartNum" value="<%= cartNum %>">
-                        <input type="hidden" name="prodNum" value="<%= product.getProdNum() %>">
-                        <input type="number" name="prodCnt" value="<%= product.getProdCnt() %>" min="1">
+                        <input type="hidden" name="prodNum" value="<%= product.getPROD_NUM() %>">
+                        <input type="number" name="prodCnt" value="<%= product.getPROD_CNT() %>" min="1">
                         <input type="submit" class="btn btn-update" value="수량 변경">
                     </form>
                 </td>
@@ -83,7 +85,7 @@
                 <td>
                     <form action="removeFromCart.jsp" method="post">
                         <input type="hidden" name="cartNum" value="<%= cartNum %>">
-                        <input type="hidden" name="prodNum" value="<%= product.getProdNum() %>">
+                        <input type="hidden" name="prodNum" value="<%= product.getPROD_NUM() %>">
                         <input type="submit" class="btn btn-delete" value="삭제">
                     </form>
                 </td>
