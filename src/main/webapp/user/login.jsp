@@ -191,7 +191,7 @@
         </div>
         <!-- 로그인 문제해결 페이지 -->
         <div class="loginerror">
-            <a href="/comunity/qna.html">로그인에 문제가 있으신가요?</a>
+            <a href="/comunity/qna.jsp">로그인에 문제가 있으신가요?</a>
         </div>
     </div>    
     <!-- 푸터 -->
