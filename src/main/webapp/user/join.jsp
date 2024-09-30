@@ -287,6 +287,6 @@
 		    </p>
 		</div>
 	</div>
-	<!-- <script src="./user.js"></script> -->
+	<script src="./user.js"></script>
 </body>
 </html>

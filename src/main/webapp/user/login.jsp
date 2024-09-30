@@ -52,6 +52,18 @@
 	#user_id{ border-radius: 6px 6px 0 0; }
     #password{ border-radius: 0 0 6px 6px; }
 	
+	/* 포커스 시 배경색 변경 */
+	#user_id:focus, #password:focus {
+	    /* 포커스 시 연한 파란색 */
+	    border: 2px solid powderblue;  
+	}
+
+	/* 포커스 벗어났을 때 */
+	#user_id:blur, #password:blur {
+	    /* 포커스가 없을 때 빨강 */
+	   border: 2px solid red;  
+	}
+	
 	/* 로그인 버튼 스타일 */
 	.btn {
 		font-weight: bold;
@@ -162,13 +174,13 @@
             </a>
         </div>
         <!-- 로그인 폼 -->
-        <form action="/user/UserLoginOk.us" method="post" name="loginForm">
+        <form action="/user/UserLoginOk.us" method="post" id="loginForm">
             <div class="login">
-                <input type="text" name=user_id id="user_id" placeholder="아이디" required>
+                <input type="text" name="user_id" id="user_id" placeholder="아이디" required>
                 <br/>
                 <input type="password" name="password" id="password" placeholder="비밀번호" required>
                 <p>
-                    <input class="btn" type="submit" value="로그인" onclick="login(); return false;"/>
+                    <input class="btn" type="submit" value="로그인" onclick=""/>
                 </p>
             </div>
             <!-- 비밀번호 재설정 및 회원가입 -->
@@ -198,6 +210,6 @@
     <div class="footer">
         &copy; <a href="/index.jsp">codingbox, co.</a> All Rights Reserved
     </div>
-    <script src="user.js"></script>
+    <script src="./user.js"></script>
 </body>
 </html>
