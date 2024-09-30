@@ -1,123 +1,132 @@
-
+/* 모든 요소의 기본 스타일 초기화 */
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+  margin: 0; /* 모든 요소의 기본 마진을 0으로 설정 */
+  padding: 0; /* 모든 요소의 기본 패딩을 0으로 설정 */
+  box-sizing: border-box; /* 요소의 너비와 높이에 패딩과 보더 포함 */
 }
 
+/* 특정 요소의 기본 스타일 초기화 */
 ul,
 li,
 a,
 button {
-  all: unset;
+  all: unset; /* 모든 기본 스타일 제거 */
 }
 
+/* 전체 페이지의 감싸는 요소 스타일 */
 .wrap {
-  font-family: "Nanum Gothic", sans-serif;
-  font-family: "Poppins", sans-serif;
-  margin: 0 auto;
+  font-family: "Nanum Gothic", sans-serif; /* 첫 번째 폰트 설정 */
+  font-family: "Poppins", sans-serif; /* 두 번째 폰트 설정 (일부 브라우저에서는 두 개의 폰트 모두 적용됨) */
+  margin: 0 auto; /* 중앙 정렬 */
 }
 
+/* 최대 너비와 중앙 정렬 설정 */
 .inner {
-  max-width: 1136px;
-  margin: 0 auto;
+  max-width: 1136px; /* 최대 너비 설정 */
+  margin: 0 auto; /* 중앙 정렬 */
 }
 
 /* 헤더 상단 영역 -----------------------------------------------------*/
+
+/* 헤더의 하단 경계 및 패딩 설정 */
 .header-upper {
-  border-bottom: 1px solid #ededed;
-  padding: 0 1rem;
+  border-bottom: 1px solid #ededed; /* 하단 경계선 설정 */
+  padding: 0 1rem; /* 좌우 패딩 설정 */
 }
 
+/* 상단 헤더 내부 스타일 */
 .header-upper .inner {
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: space-between;
-  align-items: center;
-  height: 60px;
+  display: flex; /* 플렉스 박스 레이아웃 사용 */
+  flex-flow: row nowrap; /* 가로 방향으로 배치 */
+  justify-content: space-between; /* 양 끝에 배치 */
+  align-items: center; /* 세로 방향 중앙 정렬 */
+  height: 60px; /* 높이 설정 */
 }
 
+/* 검색 메뉴 스타일 */
 .searchMenu {
-  font-size: 1.5rem;
-  color: #35c5f0;
-  cursor: pointer;
+  font-size: 1.5rem; /* 글자 크기 설정 */
+  color: #35c5f0; /* 글자 색상 설정 */
+  cursor: pointer; /* 커서 스타일 변경 */
 }
 
+/* 네비게이션 목록 숨기기 */
 .header-upper__nav ul {
-  display: none;
+  display: none; /* 네비게이션 목록 숨김 */
 }
 
+/* 로고 스타일 */
 .header-upper__logo {
-  font-family: "Gamja Flower";
-  font-weight: 700;
-  font-size: 1.5rem;
-  cursor: pointer;
-  order: 1;
+  font-family: "Gamja Flower"; /* 특정 폰트 설정 */
+  font-weight: 700; /* 두께 설정 */
+  font-size: 1.5rem; /* 글자 크기 설정 */
+  cursor: pointer; /* 커서 스타일 변경 */
 }
 
-.mobile-searchBar,
+/* 장바구니 아이콘 스타일 */
 .fa-shopping-cart {
-  margin-right: 1rem;
-  font-size: 1.2rem;
-  color: #757575;
-  cursor: pointer;
+  margin-right: 0; /* 장바구니 아이콘의 오른쪽 마진 제거 */
 }
 
-.fa-shopping-cart {
-  margin-right: 0;
-}
-
+/* 검색 바 숨기기 */
 .header-upper__searchBar {
-  display: none;
+  display: none; /* 검색 바 숨김 */
 }
 
+/* 서비스 메뉴 숨기기 */
 .header-upper__service ul {
-  display: none;
+  display: none; /* 서비스 메뉴 목록 숨김 */
 }
 
 /* 네비게이션 하단 영역 ---------------------------------------------------*/
+
+/* 하단 네비게이션 경계 및 스크롤 설정 */
 .header-lower {
-  border-bottom: 1px solid #ededed;
-  overflow-x: auto;
-  overflow-y: hidden;
+  border-bottom: 1px solid #ededed; /* 하단 경계선 설정 */
+  overflow-x: auto; /* 가로 스크롤 가능 */
+  overflow-y: hidden; /* 세로 스크롤 숨김 */
 }
 
+/* 하단 네비게이션 내부 스타일 */
 .header-lower .inner {
-  display: flex;
-  justify-content: center;
-  align-self: center;
-  height: 40px;
+  display: flex; /* 플렉스 박스 레이아웃 사용 */
+  justify-content: center; /* 중앙 정렬 */
+  align-self: center; /* 자기 자신 중앙 정렬 */
+  height: 40px; /* 높이 설정 */
 }
 
+/* 하단 네비게이션 내부 요소 스타일 */
 .header-lower .inner nav {
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: flex-start;
-  align-items: center;
-  color: #424242;
+  display: flex; /* 플렉스 박스 레이아웃 사용 */
+  flex-flow: row nowrap; /* 가로 방향으로 배치 */
+  justify-content: flex-start; /* 왼쪽 정렬 */
+  align-items: center; /* 세로 방향 중앙 정렬 */
+  color: #424242; /* 글자 색상 설정 */
 }
 
+/* 네비게이션 아이템 스타일 */
 .header-lower__item {
-  font-size: 0.8rem;
-  font-weight: 700;
-  color: #424242;
-  cursor: pointer;
-  /* margin: 8px 0; */
-  padding: 11px 10px;
-  /* position: relative; */
-  flex-shrink: 0;
+  font-size: 0.8rem; /* 글자 크기 설정 */
+  font-weight: 700; /* 두께 설정 */
+  color: #424242; /* 글자 색상 설정 */
+  cursor: pointer; /* 커서 스타일 변경 */
+  padding: 11px 10px; /* 패딩 설정 */
+  flex-shrink: 0; /* 플렉스 아이템 크기 축소 방지 */
 }
 
+/* 네비게이션 아이템 호버 스타일 */
 .header-lower__item:hover {
-  color: #35c5f0;
+  color: #35c5f0; /* 호버 시 글자 색상 변경 */
 }
 
+/* 활성화된 네비게이션 아이템 스타일 */
 .header-lower__item.active {
-  border-bottom: 2px solid #35c5f0;
+  border-bottom: 2px solid #35c5f0; /* 하단 경계선 추가 */
 }
 
+/* 하단 네비게이션 내부의 숨겨진 요소 */
 .header-lower .inner div {
-  display: none;
+  display: none; /* 숨김 */
 }
 
 /* 홈페이지 메인 전체 영역 -------------------------------------------------------------- */
@@ -374,324 +383,6 @@ button {
   max-width: 98px;
   margin: 20px auto 0;
 }
-
-/* 모바일 오늘의딜 전체 영역 */
-.home-section__wrap {
-  display: flex;
-  flex-flow: column nowrap;
-}
-
-.home-section__container {
-  display: flex;
-  flex-flow: row nowrap;
-  overflow-x: scroll;
-}
-
-.home-section__item {
-  max-width: 100%;
-  flex: 0 0 100%;
-  cursor: pointer;
-  overflow: hidden;
-}
-
-.home-section__item:hover .home-section__item__sub {
-  color: #757575;
-}
-
-.home-section__item article a {
-  display: inline-block;
-  overflow: hidden;
-}
-
-.home-section__img-wrap {
-  overflow: hidden;
-  width: 50%;
-  border-radius: 10px;
-}
-
-.home-section__item:hover article a img {
-  transform: scale(108%);
-}
-
-.home-section__item article a img {
-  width: 100%;
-  transition: 0.4s;
-  vertical-align: bottom;
-}
-
-.home-section__item article a {
-  display: flex;
-  flex-flow: row nowrap;
-}
-
-.home-section__item__details {
-  width: calc(50% - 2rem);
-  display: flex;
-  flex-flow: column nowrap;
-  margin-left: 1rem;
-  padding-top: 0.5rem;
-}
-
-.home-section__item__tit {
-  display: none;
-}
-
-.home-section__item__sub {
-  font-weight: 700;
-}
-
-.home-section__item__percent {
-  font-size: 3rem;
-  font-weight: bold;
-  color: #ff7777;
-}
-
-.home-section__item__price {
-  display: none;
-}
-
-.home-section__item__review {
-  display: none;
-}
-
-/* 모바일 인기 사진 영역 */
-.home-section__wrap {
-  display: flex;
-  flex-flow: column nowrap;
-}
-
-.home-section__tit__wrap {
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.poular-item__more__desktop {
-  display: none;
-}
-
-.poular-item__more__mobile {
-  font-weight: 700;
-  width: 100%;
-  height: 49px;
-  line-height: 49px;
-  background-color: #f0f0f0;
-  border-radius: 8px;
-  text-align: center;
-  cursor: pointer;
-}
-
-.poular-item__more__mobile:hover {
-  background-color: #d8d8d8;
-}
-
-.popular-content__wrap {
-  display: flex;
-  flex-flow: row wrap;
-  width: calc(100% - 1rem);
-}
-
-.popular-item__wrap {
-  flex: 1 1 calc(50% - 0.8rem);
-  border-radius: 8px;
-  overflow: hidden;
-  position: relative;
-  margin: 0 0.4rem 0.8rem;
-  cursor: pointer;
-}
-
-.popular-item__wrap:nth-child(7),
-.popular-item__wrap:nth-child(8) {
-  display: none;
-}
-
-.popular-item__number {
-  position: absolute;
-  top: 0;
-  left: 10px;
-  width: 30px;
-  height: 30px;
-  background: #35c5f0;
-  opacity: 0.8;
-  color: #fff;
-  text-align: center;
-  line-height: 45px;
-  font-weight: bold;
-  opacity: 0.8;
-}
-
-.popular-item__number::before {
-  position: absolute;
-  top: 30px;
-  left: 0px;
-  content: "";
-  display: inline-block;
-  border-left: 30px solid #35c5f0;
-  border-bottom: 15px solid transparent;
-  border-right: 15px solid transparent;
-}
-
-.popular-item__number::after {
-  position: absolute;
-  top: 30px;
-  left: -15px;
-  content: "";
-  display: inline-block;
-  border-right: 30px solid #35c5f0;
-  border-bottom: 15px solid transparent;
-  border-left: 15px solid transparent;
-}
-
-.popular-item__wrap:hover img {
-  transform: scale(108%);
-}
-
-.popular-item__wrap a article {
-}
-
-.popular-item__wrap a article div {
-  overflow: hidden;
-}
-
-.popular-item__wrap a article div img {
-  width: 100%;
-  transition: 0.4s;
-  vertical-align: bottom;
-}
-
-/* 운세 확인 배너 영역 -----------------------------------------------------------------*/
-.banner-wrap {
-  margin: 0;
-}
-
-.checkLuckBanner {
-  cursor: pointer;
-  margin: 2rem 0;
-}
-
-.luck-mobile {
-  display: inline-block;
-}
-
-.luck-desktop {
-  display: none;
-}
-/* 유저 인테리어 리뷰 영역 -----------------------------------------------------------------*/
-
-.user-review__content {
-  display: flex;
-  flex-flow: column nowrap;
-  width: 100%;
-}
-
-.user-review__item {
-  flex: 0 0 100%;
-  margin-bottom: 1rem;
-  cursor: pointer;
-}
-
-.user-review__item:hover img {
-  transform: scale(108%);
-}
-
-.user-review__item a article {
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: flex-start;
-  align-items: center;
-}
-
-.user-review__img__wrap {
-  flex: 0 0 35%;
-  overflow: hidden;
-  border-radius: 8px;
-}
-
-.user-review__img__wrap img {
-  width: 100%;
-  transition: 0.4s;
-  vertical-align: bottom;
-}
-
-.user-review__details {
-  flex: 0 0 calc(64% - 1rem);
-  padding: 4px 0 0 12px;
-}
-
-.user-review__star {
-  color: #35c5f0;
-  letter-spacing: -1px;
-  font-size: 0.8rem;
-}
-
-.user-review__text p {
-  height: 3.5rem;
-  font-size: 0.9rem;
-  line-height: 1.2rem;
-  overflow: hidden;
-  word-break: break-word;
-  text-overflow: ellipsis;
-  margin-top: 6px;
-}
-
-.user-review__bland {
-  font-weight: 600;
-  margin-top: 0.8rem;
-}
-
-/* 모바일 하단 영역 -------------------------------------------------------------*/
-.footer {
-  width: 100%;
-  max-width: 1136px;
-  margin: 2rem auto 0;
-  padding: 2rem 1rem;
-}
-
-.footer-upper {
-  display: flex;
-  flex-flow: column nowrap;
-}
-
-.footer-upper ul li a svg {
-  width: 1.5rem;
-  height: auto;
-  margin: 0 1rem;
-  cursor: pointer;
-}
-
-.footer-upper div h4 {
-  font-size: 1rem;
-  cursor: pointer;
-  margin-bottom: 0.2em;
-}
-
-.footer-number {
-  display: block;
-  font-size: 1.8rem;
-  font-weight: 700;
-  cursor: pointer;
-}
-
-.footer-upper div span {
-  color: rgb(97, 97, 97);
-  font-size: 0.8rem;
-  display: block;
-  margin-bottom: 1rem;
-}
-
-.footer-lower {
-  font-size: 0.7rem;
-  color: #424242;
-  margin-top: 1rem;
-  display: inline-block;
-}
-
-.footer-lower li {
-  margin-right: 1rem;
-  cursor: pointer;
-}
-
 /* 데스크탑 */
 @media screen and (min-width: 785px) {
   /*  스크린의 크기가 768을 넘게된다면 해당 스타일을 적용합니다. */
@@ -957,7 +648,7 @@ button {
     display: inline-block;
   }
 
-  /* 모바일을 넘어가면 홈 쇼트컷 전체 영역 ---------------------------------------------------------------------- */
+
   .home-shortcut__item {
     flex: 0 0 12.5%;
   }
@@ -967,7 +658,6 @@ button {
     font-weight: 700;
   }
 
-  /* 모바일 넘어가면 홈 스토리 전체 영역 ------------------------------------------------*/
   .home-stories__item {
     flex: 1 1 calc(25% - 2rem);
   }
@@ -976,12 +666,12 @@ button {
     flex: 0 0 25%;
   }
 
-  /* 모바일 넘어가면 카테고리 영역 */
+
   .home-category__item__wrap {
     flex: 0 0 16.6666666667%;
   }
 
-  /* 모바일 넘어가면 오늘의딜 전체 영역 */
+
   .home-section__item {
     flex: 0 0 25%;
   }
@@ -1063,70 +753,6 @@ button {
     margin-right: 0.4em;
   }
 
-  /* 모바일 넘어가면 인기 사진 영역 */
-  .popular-content__wrap {
-    width: 100%;
-  }
-
-  .popular-item__wrap {
-    flex: 1 1 calc(25% - 0.8rem);
-  }
-
-  .popular-item__wrap:nth-child(7),
-  .popular-item__wrap:nth-child(8) {
-    display: inline-block;
-  }
-
-  .poular-item__more__mobile {
-    display: none;
-  }
-
-  .poular-item__more__desktop {
-    display: inline-block;
-    color: #35c5f0;
-    font-weight: 700;
-    cursor: pointer;
-  }
-
-  /* 모바일 넘어가면 운세 배너 영역 */
-  /* .checkLuckBanner {
-    margin: 0;
-  } */
-
-  .luck-mobile {
-    display: none;
-  }
-
-  .luck-desktop {
-    display: inline-block;
-  }
-
-  /* 모바일 넘어가면 유저 인테리어 리뷰 영역 */
-  .user-review__content {
-    flex-direction: row;
-  }
-
-  .user-review__item {
-    flex: 1 1 calc(100% / 3);
-  }
-
-  .user-review__item a article {
-    flex-flow: column nowrap;
-  }
-
-  .user-review__item:nth-child(2) {
-    margin: 0 1rem;
-  }
-
-  .user-review__img__wrap {
-    flex: 0 0 100%;
-  }
-
-  .user-review__details {
-    padding-top: 1em;
-  }
-
-  /* 모바일 넘어가면 하단 영역 ----------------------------------------------------*/
   .footer-upper {
     flex-direction: row;
     justify-content: space-between;

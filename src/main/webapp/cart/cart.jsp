@@ -2,10 +2,12 @@
 <%@ page import="java.util.List" %>
 <%@ page import="com.kh.web.cart.dto.CartProdDTO" %>
 <%@ page import="com.kh.cart.service.CartService" %>
+<%@ page import="com.kh.web.cart.dto.ProductDTO" %>
 <%
     CartService cartService = new CartService();
     int cartNum = 1; // 예시값
     List<CartProdDTO> cartProducts = cartService.getCartProducts(cartNum);
+    int totalAmount = 0; // 장바구니 총 금액 초기화
 %>
 <!DOCTYPE html>
 <html lang="ko">
@@ -37,9 +39,9 @@
             </nav>
             <div class="header-right">
                 <ul style="display: flex; margin: 0; padding: 0; list-style: none;">
-                    <li style="margin-right: 20px;"><a href="cart.jsp">장바구니</a></li> <!-- 공백 추가 -->
-                    <li style="margin-right: 20px;"><a href="login.jsp">로그인</a></li> <!-- 공백 추가 -->
-                    <li style="margin-right: 20px;"><a href="register.jsp">회원가입</a></li> <!-- 공백 추가 -->
+                    <li style="margin-right: 20px;"><a href="cart.jsp">장바구니</a></li>
+                    <li style="margin-right: 20px;"><a href="login.jsp">로그인</a></li>
+                    <li style="margin-right: 20px;"><a href="register.jsp">회원가입</a></li>
                     <li><a href="customerService.jsp">고객센터</a></li>
                 </ul>
             </div>
@@ -59,12 +61,16 @@
             <%
                 if (cartProducts != null && !cartProducts.isEmpty()) {
                     for (CartProdDTO product : cartProducts) {
+                        ProductDTO productDTO = product.getProduct(); // CartProdDTO의 product 객체 가져오기
+                        if (productDTO != null) {
+                            int totalPrice = product.getProdCnt() * product.getProdPrice(); // 수량에 맞는 총 가격 계산
+                            totalAmount += totalPrice; // 장바구니 총 금액에 추가
             %>
             <tr>
-              <%--  <td>
-                     <img src="<%= product.getImageUrl() %>" alt="<%= product.getProdName() %>" class="product-image">
-                </td>
-                <td><%= product.getProdName() %></td> --%> 
+                <td>
+    			<img src="<%= request.getContextPath() + productDTO.getProdImage() %>" alt="<%= productDTO.getProdName() %>" class="product-image">
+				</td>
+                <td><%= productDTO.getProdName() %></td>
                 <td>
                     <form action="updateCart.jsp" method="post">
                         <input type="hidden" name="cartNum" value="<%= cartNum %>">
@@ -73,7 +79,7 @@
                         <input type="submit" class="btn btn-update" value="수량 변경">
                     </form>
                 </td>
-                <td><%= product.getProdPrice() %>원</td>
+                <td><%= totalPrice %>원</td> <!-- 수량에 따른 총 가격 출력 -->
                 <td>
                     <form action="removeFromCart.jsp" method="post">
                         <input type="hidden" name="cartNum" value="<%= cartNum %>">
@@ -83,6 +89,13 @@
                 </td>
             </tr>
             <%
+                        } else {
+            %>
+            <tr>
+                <td colspan="5">상품 정보를 불러올 수 없습니다.</td>
+            </tr>
+            <%
+                        }
                     }
                 } else {
             %>
@@ -93,11 +106,12 @@
                 }
             %>
         </table>
+
         <div class="cart-summary">
-            <h2>총 상품금액: 29,800원</h2>
+            <h2>총 상품금액: <%= totalAmount %>원</h2>
             <h2>총 배송비: + 0원</h2>
             <h2>총 할인금액: - 10,000원</h2>
-            <h2>결제금액: 19,800원</h2>
+            <h2>결제금액: <%= totalAmount - 10000 %>원</h2> <!-- 총 금액에서 할인금액을 제외한 결제 금액 -->
         </div>
         <a href="productList.jsp" class="back-link">상품 목록으로 돌아가기</a>
     </div>
