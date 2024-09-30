@@ -158,7 +158,7 @@
 </head>
 <body>
 	<div id="homelogo">
-            <a href="/index.html">
+            <a href="/index.jsp">
                 오늘의집
             </a>
     </div>
