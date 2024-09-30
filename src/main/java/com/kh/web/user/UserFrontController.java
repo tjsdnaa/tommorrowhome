@@ -28,20 +28,20 @@ public class UserFrontController extends HttpServlet{
 			// /user/UserLogin.us 에 맞으면
 			case "/user/UserLogin.us" : {
 				// /web/user/login.html" 으로 이동
-				forward = new ActionForward(false, "/user/login.html");
+				forward = new ActionForward(false, "/user/login.jsp");
 				break;
 			}
-			// 회원가입을 누를때
+			// 회원가입을 눌렀을때
 			case "/user/UserJoin.us" : {
 				forward = new ActionForward(false, "/user/join.jsp");
 				break;
 			}
-			// 로그인 했을 때
+			// 로그인을 했을때
 			case "/user/UserLoginOk.us" : {
 				forward = new UserLoginOkAction().execute(req,resp);
 				break;
 			}
-			// 회원가입 완료 했을때
+			// 회원가입을 완료했을때
 			case "/user/UserJoinOk.us" : {
 				forward = new UserJoinAction().execute(req, resp);
 			}

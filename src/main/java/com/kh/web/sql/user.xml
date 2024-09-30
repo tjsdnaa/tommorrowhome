@@ -3,7 +3,7 @@
     PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
     "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="Users">
-	<insert id="join" parameterType="com.kh.web.user.dao.UsersDTO">
+	<insert id="join" parameterType="usersdto">
 		INSERT INTO USERS VALUES 
 		(#{user_id},#{name},#{email},#{password},#{nickname},#{tel})
 	</insert>

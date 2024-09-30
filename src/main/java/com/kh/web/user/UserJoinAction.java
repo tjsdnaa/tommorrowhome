@@ -28,7 +28,7 @@ public class UserJoinAction implements Action{
 		if ( udao.join(user) ) {
 			// 회원가입 성공처리
 			forward.setRedirect(true);
-			forward.setPath("/user/login.html");
+			forward.setPath("/user/login.jsp");
 		} else {
 			// 회원가입 실패처리
 			forward.setRedirect(true);

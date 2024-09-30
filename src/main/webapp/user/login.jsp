@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -171,7 +173,7 @@
             </div>
             <!-- 비밀번호 재설정 및 회원가입 -->
             <div class="loginSet">
-                <span class="reset_pw"><a href="/user/pw_re.html">비밀번호 재설정</a></span>             
+                <span class="reset_pw"><a href="/user/pw_re.jsp">비밀번호 재설정</a></span>             
                 <span class="join"><a href="/user/UserJoin.us">회원가입</a></span>
             </div>
         </form>
