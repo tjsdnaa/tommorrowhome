@@ -23,6 +23,7 @@
         <mapper resource="com/kh/web/sql/ProductMapper.xml"/>
         <mapper resource="com/kh/web/sql/CartProdMapper.xml"/>
         <mapper resource="com/kh/web/sql/CartMapper.xml"/>
+        <mapper resource="com/kh/web/sql/user.xml"/>
     </mappers>
 </configuration>
 
