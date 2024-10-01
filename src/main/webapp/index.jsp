@@ -62,7 +62,7 @@
     <i class="fas fa-search"></i>
     <input type="text" placeholder="오늘의집 통합검색" />
   </div>
-  <a href=""><i class="fas fa-shopping-cart"></i></a>
+  <a href="<%=request.getContextPath()%>/cart/cart.jsp"><i class="fas fa-shopping-cart"></i></a>
   <ul>
     <li><a href="/user/UserLogin.us">로그인</a></li>
     <li><a href="">회원가입</a></li>
