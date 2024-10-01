@@ -9,6 +9,7 @@
         <typeAlias type="com.kh.web.cart.dto.CartDTO" alias="cartdto"/>
         <typeAlias type="com.kh.web.cart.dto.JoinProdDTO" alias="joinproddto"/>
         <typeAlias type="com.kh.web.user.dao.UsersDTO" alias="usersdto"/>
+        <typeAlias type="com.kh.web.cart.dto.CartChangeDTO" alias="CartChangeDTO"/>
     </typeAliases>
     <environments default="development">
         <environment id="development">
