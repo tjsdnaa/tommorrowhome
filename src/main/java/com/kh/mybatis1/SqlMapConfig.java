@@ -13,7 +13,7 @@ public class SqlMapConfig {
 	// 클래스 초기화 블록(클래스가 처음 로딩될 때 한번만 수행)
 	static {
 		try {
-			String resource = "com/kh/mybatis/config.xml";
+			String resource = "com/kh/mybatis1/config.xml";
 			Reader reader 
 			= Resources.getResourceAsReader(resource);
 			

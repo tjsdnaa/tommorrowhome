@@ -92,7 +92,7 @@
 </head>
 <body>
 
-<h2>커뮤니티</h2>
+
 
 <div class="category-container">
     <div class="category" onclick="goToPage('qna')">QnA</div>
@@ -108,12 +108,7 @@
     <label for="boardcontents">내용</label>
     <textarea id="content" name="content" rows="10" placeholder="내용을 입력하세요"></textarea>
 	
-<!-- 	<!-- 이미지 업로드 부분 추가 -->
-    <div class="image-upload">
-	    <label for="uploadImage">사진 업로드</label>
-	    <input type="file" id="uploadImage" name="uploadImage" accept="image/*">
-    </div>
-	 -->
+
     <div class="button-container">
         <button type="submit" class="btn-submit" onclick="location.href='javascript:document.boardForm.submit();'">등록하기</button>
         <button type="button" class="btn-list" onclick="location.href='/board/BoardList.bo'">목록</button>

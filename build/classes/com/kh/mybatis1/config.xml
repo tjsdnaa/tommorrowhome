@@ -19,7 +19,7 @@
     </environment>
   </environments>
   <mappers>
-  	<mapper resource="com/kh/web/sql/board.xml"/>
+  	<mapper resource="com/kh/web/sql1/board.xml"/>
   </mappers>
   
 </configuration>

@@ -116,8 +116,6 @@
 </head>
 <body>
 
-<h2>커뮤니티</h2>
-
    <c:set var = "boardList" value = "${requestScope.boardList }"/>
    <c:set var = "totalCnt" value = "${requestScope.totalCnt }"/>
    
