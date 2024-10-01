@@ -31,8 +31,8 @@ public class BoardDAO {
 		return boardList;
 	}
 
-	public int getBoardCnt(int boardtype) {
-		return session.selectOne("Board1.getBoardCnt", boardtype);
+	public int getBoardCnt() {
+		return session.selectOne("Board1.getBoardCnt");
 	}
 	
 	public boolean insertBoard(BoardDTO board) {

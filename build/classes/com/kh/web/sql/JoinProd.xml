@@ -23,4 +23,15 @@
 		ON a.PROD_NUM =b.PROD_NUM
     </select>
     
+    <update id="setJoinProd" parameterType="CartChangeDTO">
+	    UPDATE CART_PROD 
+	    SET PROD_CNT = #{prodcnt}
+	    WHERE CART_NUM = #{cartnum} AND PROD_NUM = #{prodnum}
+	</update>
+	
+	<delete id="deleteJoinProd" parameterType="CartChangeDTO">
+	    DELETE FROM CART_PROD
+	    WHERE CART_NUM = #{cartnum} AND PROD_NUM = #{prodnum}
+	</delete>
+    
 </mapper>

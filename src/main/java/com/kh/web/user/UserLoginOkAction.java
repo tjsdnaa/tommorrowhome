@@ -26,8 +26,14 @@ public class UserLoginOkAction implements Action{
             HttpSession session = req.getSession();
             session.setAttribute("user_id", user_id);
             session.setMaxInactiveInterval(30 * 60); // 세션 유지 시간 30분 설정
+
             // 세션에 저장된 유저 ID 확인
             System.out.println("세션에 저장된 유저 ID: " + session.getAttribute("user_id"));
+
+
+            // 세션에 저장된 유저 ID 확인 - 테스트용
+            // System.out.println("세션에 저장된 유저 ID: " + session.getAttribute("user_id"));
+            
             forward.setPath("/index.jsp");
         } else {
             // 로그인 실패

@@ -75,7 +75,7 @@ CartService cartService = new CartService();
                 <td><%=product.getPROD_NAME() %></td>
                 <td>
                     <form action="updateCart.jsp" method="post">
-                        <input type="hidden" name="cartNum" value="<%= cartNum %>">
+                    	<input type="hidden" name="cartNum" value="<%= cartNum %>">
                         <input type="hidden" name="prodNum" value="<%= product.getPROD_NUM() %>">
                         <input type="number" name="prodCnt" value="<%= product.getPROD_CNT() %>" min="1">
                         <input type="submit" class="btn btn-update" value="수량 변경">

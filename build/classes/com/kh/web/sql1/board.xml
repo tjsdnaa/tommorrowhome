@@ -2,21 +2,27 @@
 <!DOCTYPE mapper
     PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
     "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace = "Board">
+<mapper namespace = "Board1">
 	<select id ="getBoardList" parameterType="hashmap" resultType="boarddto">
 		SELECT * 
-		FROM (SELECT rownum R, A.* 
-			  FROM 
-				(SELECT * FROM BOARD ORDER BY BOARDid DESC)A)
-		WHERE R BETWEEN #{startRow} AND #{endRow}
-	</select>
+		FROM (
+		SELECT rownum R, A.* 
+			  FROM (
+			  SELECT * FROM BOARD 
+			  WHERE boardtype = '1' 
+			  ORDER BY BOARDid DESC
+			  )A
+			  WHERE rownum &lt;= #{endRow}
+		)
+		WHERE R &gt;= #{startRow}
+	</select> 
 	
 	<select id = "getBoardCnt" resultType="_int">
-		SELECT count(*) FROM BOARD
+		SELECT count(*) FROM BOARD where boardtype = #{boardtype}
 	</select>
 		
 	<insert id="insertBoard" parameterType="boarddto">
-		INSERT INTO BOARD values(SEQ_BOARD_ID.nextval,'USER1', '1', '1', #{title}, #{content})
+		INSERT INTO BOARD values(SEQ_BOARD_ID.nextval,#{userid}, '1', '1', #{title}, #{content})
    </insert>
    
 	<select id="getDetail" parameterType="_int" resultType="boarddto">
@@ -29,7 +35,7 @@
 	
 	<insert id="addReply" parameterType="replydto">
 		INSERT INTO datgle VALUES
-		( #{boardid}, SEQ_DATGLE_NUM.nextval, 'USER1',#{content})
+		( #{boardid}, SEQ_DATGLE_NUM.nextval, #{userid},#{content})
 	</insert>
 	
 	<select id = "getReplys" parameterType="_int" resultType="replydto">
@@ -57,4 +63,13 @@
     	WHERE boardid = #{boardid}
 	</update>
 	
+	<select id="getPostOwnerId" resultType="String">
+    	SELECT USERID FROM BOARD WHERE BOARDID = #{boardid}
+	</select>
+	
+	<!-- 댓글 작성자 조회 -->
+    <select id="getReplyOwnerId" resultType="String">
+        SELECT USERID FROM DATGLE WHERE commentnum = #{commentnum}
+    </select>
+    
 </mapper>

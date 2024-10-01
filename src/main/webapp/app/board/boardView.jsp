@@ -293,8 +293,6 @@
 </head>
 <body>
 
-    <h2>커뮤니티</h2>
-    
     <div class="category-container">
         <div class="category" onclick="goToPage('qna')">QnA</div>
         <div class="category selected" onclick="goToPage('board')">자유게시판</div>
@@ -397,7 +395,7 @@
 			
 			
 	<div class="button-container">
-	        <button type="button" class="btn-list" onclick="location.href='${pageContext.request.contextPath}/app/board/boardList.jsp'">목록</button>
+	        <button type="button" class="btn-list" onclick="location.href='/board/BoardList.bo'">목록</button>
 	</div>
 
     </div>
