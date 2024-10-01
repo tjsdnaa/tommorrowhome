@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -174,6 +175,11 @@
             </a>
         </div>
         <!-- 로그인 폼 -->
+        <c:if test="${param.flag == false }">
+			<script>
+				alert("로그인 실패! 다시 시도하세요!");
+			</script>
+		</c:if>
         <form action="/user/UserLoginOk.us" method="post" id="loginForm">
             <div class="login">
                 <input type="text" name="user_id" id="user_id" placeholder="아이디" required>
