@@ -1,6 +1,10 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%> 
+<%
+    // request 객체에서 userId 값 가져오기
+    String userId = (String) request.getAttribute("userId");
+%>
 <html>
 <head>
     <title>채팅방</title>
@@ -164,7 +168,7 @@
         </div>
         <div class="input-section">
             <input type="text" id="userID" placeholder="유저아이디를 입력하세요">
-            <input type="hidden" id="sendID" value="로그인 해야 뜸">
+            <input type="hidden" id="sendID" value=<%=userId %>>
             <input type="text" id="message" placeholder="메시지를 입력하세요">
             <button onclick="sendMessage()">전송</button>
         </div>
