@@ -208,7 +208,7 @@
     </div>    
     <!-- 푸터 -->
     <div class="footer">
-        &copy; <a href="/index.jsp">codingbox, co.</a> All Rights Reserved
+        &copy; <a href="/index.jsp">tomorrow home, co.</a> All Rights Reserved
     </div>
     <script src="./user.js"></script>
 </body>
