@@ -6,6 +6,7 @@ import com.kh.web.user.dao.UsersDAO;
 
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
 
 public class UserLoginOkAction implements Action{
 
@@ -18,14 +19,23 @@ public class UserLoginOkAction implements Action{
 		String password = req.getParameter("password");
 		
 		forward.setRedirect(true);
+		
 		if (udao.login(user_id, password)) {
-			// 로그인 성공
-			forward.setPath("/main/index.jsp");
-		} else {
-			// 로그인 실패
-			forward.setPath("/user/login.jsp?flag=false");
-		}
-		return forward;
-	}
+            // 로그인 성공
+            // 세션 생성
+            HttpSession session = req.getSession();
+            session.setAttribute("user_id", user_id);
+            session.setMaxInactiveInterval(30 * 60); // 세션 유지 시간 30분 설정
+            
+            // 세션에 저장된 유저 ID 확인
+            System.out.println("세션에 저장된 유저 ID: " + session.getAttribute("user_id"));
+            
+            forward.setPath("/index.jsp");
+        } else {
+            // 로그인 실패
+            forward.setPath("/user/login.jsp?error=true");
+        }
+        return forward;
+    }
 
 }

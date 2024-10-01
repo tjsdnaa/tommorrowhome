@@ -71,7 +71,7 @@
     <!-- 고객센터 관련 리스트 -->
     <div class="header-upper__serviceLists" style="display: none;"> <!-- 기본적으로 숨김 -->
       <ul>
-        <li><a href=""><h4>공지사항</h4></a></li>
+        <li><a href="/board/BoardList.no"><h4>공지사항</h4></a></li>
         <li><a href=""><h4>채팅방</h4></a></li>
       </ul>
    	 </div>
