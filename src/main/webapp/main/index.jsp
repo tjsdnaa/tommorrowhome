@@ -34,8 +34,8 @@
       referrerpolicy="no-referrer"
     />
 
-    <link rel="stylesheet" href="/css/style.css" />
-    <link rel="stylesheet" href="/css/banner.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    
   </head>
   <body>
     <!-- 전체 레이아웃--------------------------------------------------------------->
@@ -58,15 +58,24 @@
               </div>
             </div>
        <div class="header-upper__service">
-  <i class="mobile-searchBar fas fa-search"></i>
   <div class="header-upper__searchBar">
     <i class="fas fa-search"></i>
     <input type="text" placeholder="오늘의집 통합검색" />
   </div>
   <a href=""><i class="fas fa-shopping-cart"></i></a>
   <ul>
-    <li><a href="/index.jsp">로그아웃</a></li>
-    <li><a href="">고객센터</a></li>
+    <li><a href="">로그인</a></li>
+    <li><a href="">회원가입</a></li>
+    <li>
+    <button class="header-upper__serviceBt">고객센터</button>
+    <!-- 고객센터 관련 리스트 -->
+    <div class="header-upper__serviceLists" style="display: none;"> <!-- 기본적으로 숨김 -->
+      <ul>
+        <li><a href=""><h4>공지사항</h4></a></li>
+        <li><a href=""><h4>채팅방</h4></a></li>
+      </ul>
+   	 </div>
+    </li>
     <li>
       <button class="header-upper__writeBt">글쓰기</button>
       <div class="header-upper__lists" style="display: none;"> <!-- 기본적으로 숨김 -->
@@ -89,6 +98,16 @@
         lists.style.display = 'none';  // 숨기기
       }
     });
+    
+    document.querySelector('.header-upper__serviceBt').addEventListener('click', function() {
+        const serviceLists = document.querySelector('.header-upper__serviceLists');
+        // 토글 기능을 적용
+        if (serviceLists.style.display === 'none' || serviceLists.style.display === '') {
+          serviceLists.style.display = 'block'; // 보이게
+        } else {
+          serviceLists.style.display = 'none';  // 숨기기
+        }
+      });
   </script>
     </li>
   </ul>
@@ -101,19 +120,48 @@
  <div class="header-lower">
     <div class="inner">
        <nav>
+       			<div class="community-menu">
               <a class="header-lower__item active" href="">홈</a>
-              <a class="header-lower__item" href="">추천</a>
-              <a class="header-lower__item" href="">#채널</a>
-              <a class="header-lower__item" href="">잡둘이</a>
-              <a class="header-lower__item" href="">집사진</a>
-              <a class="header-lower__item" href="">3D인테리어</a>
-              <a class="header-lower__item" href="">살림수납</a>
-              <a class="header-lower__item" href="">반려동물</a>
-              <a class="header-lower__item" href="">육아</a>
+              <a class="header-lower__item" href="">게시판</a>
+              <a class="header-lower__item" href="">Q&A</a>
+              </div>
+               <!-- 쇼핑 하단 메뉴 추가 -->
+           		 <div class="shopping-menu" style="display: none;"> <!-- 기본적으로 숨김 -->
+                <a class="header-lower__item active" href="">홈</a>
+                <a class="header-lower__item" href="">카테고리</a>
+            </div>
             </nav>
           </div>
         </div>
       </header>
+</div>
+<script>
+    // 커뮤니티 메뉴 클릭 시 하단 메뉴 표시
+    document.querySelector('.header-upper__item.upper__active a').addEventListener('click', function(event) {
+        event.preventDefault(); // 기본 링크 동작 방지
+        document.querySelector('.community-menu').style.display = 'block'; // 커뮤니티 메뉴 보이기
+        document.querySelector('.shopping-menu').style.display = 'none'; // 쇼핑 메뉴 숨기기
+    });
+
+    // 쇼핑 메뉴 클릭 시 하단 메뉴 표시
+    document.querySelector('.header-upper__item:last-child a').addEventListener('click', function(event) {
+        event.preventDefault(); // 기본 링크 동작 방지
+        document.querySelector('.shopping-menu').style.display = 'block'; // 쇼핑 메뉴 보이기
+        document.querySelector('.community-menu').style.display = 'none'; // 커뮤니티 메뉴 숨기기
+    });
+    document.querySelector('.header-upper__item.upper__active a').addEventListener('click', function(event) {
+        event.preventDefault(); // 기본 링크 동작 방지
+        document.querySelector('.header-upper__item.upper__active').classList.remove('upper__active');
+        this.parentNode.classList.add('upper__active'); // 클릭한 메뉴에 클래스 추가
+    });
+
+    // 쇼핑 메뉴 클릭 시 활성화
+    document.querySelector('.header-upper__item:last-child a').addEventListener('click', function(event) {
+        event.preventDefault(); // 기본 링크 동작 방지
+        document.querySelector('.header-upper__item.upper__active').classList.remove('upper__active');
+        this.parentNode.classList.add('upper__active'); // 클릭한 메뉴에 클래스 추가
+    });
+</script>
 
  <!-- 홈 페이지 전체 영역------------------------------------------------------------- -->
    <div class="home-page">
@@ -126,7 +174,7 @@
                 alt="홈페이지 메인 이미지" width="828" height="600"
               />
               <div class="home-header-tit">
-                <h4>원기옥 같은 템으로 셋팅한 신혼집</h4>
+                <h4>우리집으로</h4>
                 <a href="#">보러가기</a>
               </div>
             </div>
@@ -135,51 +183,21 @@
           <div class="home-header__lower">
             <div class="home-header__lower-banner">
               <ul class="banner-slider">
+                <li class="banner-item">         
+                </li>
                 <li class="banner-item">
                   <a href="">
                     <img
                       class="row-img"
                       src="https://image.ohou.se/i/bucketplace-v2-development/static/home_banner/sign_up_web_v2.png?gif=1&w=512"
                       alt="베너 이미지1"
-                    />
-                  </a>
-                </li>
-                <li class="banner-item">
-                  <a href="">
-                    <img
-                      class="row-img"
-                      src="https://image.ohou.se/i/bucketplace-v2-development/uploads/banners/home_banner/171291180435660223.png?w=256"
-                      alt="베너 이미지1"
-                    />
-                  </a>
-                </li>
-                <li class="banner-item">
-                  <a href="">
-                    <img
-                      class="row-img"
-                      src="https://image.ohou.se/i/bucketplace-v2-development/uploads/banners/home_banner/164559252959722925.png?gif=1&w=512"
-                      alt="베너 이미지1"
-                    />
-                  </a>
-                </li>
-                <li class="banner-item">
-                  <a href="">
-                    <img
-                      class="col-img"
-                      src="https://image.ohou.se/i/bucketplace-v2-development/uploads/banners/home_banner/164559255249087796.png?gif=1&w=850"
-                      alt="베너 이미지1"
-                    />
-                    <img
-                      class="row-img"
-                      src="https://image.ohou.se/i/bucketplace-v2-development/uploads/banners/home_banner/164559255881515784.png?gif=1&w=512"
-                      alt="베너 이미지1"
-                    />
+                    />                  
                   </a>
                 </li>
               </ul>
             </div>
           </div>
-        </div>
+        </div>   
 
 <!-- 홈 페이지 쇼트컷  ---------------------------------------------------------->
   <nav class="container home-shortcut">
@@ -461,7 +479,7 @@
                       </p>
                       <div class="home-section__item__sale">
                         <div class="home-section__item__percent">66%</div>
-                        <div class="home-section__item__price">11,900 외</div>
+                        <div class="home-section__item__price">11,900 </div>
                       </div>
                       <div class="home-section__item__review">
                         <div class="home-section__item__grade">4.7</div>
@@ -763,6 +781,6 @@
     </div>
 
     <script src="write.js"></script>
-    <script src="bannerSlider.js"></script>
+    
   </body>
 </html>
