@@ -5,15 +5,20 @@
 <mapper namespace = "Board1">
 	<select id ="getBoardList" parameterType="hashmap" resultType="boarddto">
 		SELECT * 
-		FROM (SELECT rownum R, A.* 
-			  FROM 
-				(SELECT * FROM BOARD ORDER BY BOARDid DESC)A)
-		WHERE WHERE boardtype = '1'
-		AND R BETWEEN #{startRow} AND #{endRow}
-	</select>
+		FROM (
+		SELECT rownum R, A.* 
+			  FROM (
+			  SELECT * FROM BOARD 
+			  WHERE boardtype = '1' 
+			  ORDER BY BOARDid DESC
+			  )A
+			  WHERE rownum &lt;= #{endRow}
+		)
+		WHERE R &gt;= #{startRow}
+	</select> 
 	
 	<select id = "getBoardCnt" resultType="_int">
-		SELECT count(*) FROM BOARD
+		SELECT count(*) FROM BOARD where boardtype = #{boardtype}
 	</select>
 		
 	<insert id="insertBoard" parameterType="boarddto">

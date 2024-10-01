@@ -29,8 +29,20 @@ public class BoardListAction implements Action {
 	        }
 	    }
 
+	    // boardtype 가져오기 (기본값을 설정하거나 확인)
+        String boardTypeParam = req.getParameter("boardtype");
+        int boardtype = 1;  // 기본값을 1로 설정
+
+        if (boardTypeParam != null && !boardTypeParam.isEmpty()) {
+            try {
+                boardtype = Integer.parseInt(boardTypeParam);
+            } catch (NumberFormatException e) {
+                boardtype = 1;  // 기본값으로 설정
+            }
+        }
+	    
 	    // 총 게시글 수 가져오기
-	    int totalCnt = bdao.getBoardCnt();
+	    int totalCnt = bdao.getBoardCnt(boardtype);
 
 	    // 페이지 설정
 	    int pageSize = 10;  // 한 페이지에 보여줄 게시글 수
