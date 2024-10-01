@@ -167,6 +167,11 @@
 </style>
 </head>
 <body>
+	<c:if test="${param.flag == false }">
+		<script>
+			alert("로그인 실패! 다시 시도하세요!");
+		</script>
+	</c:if>
 	<div class="content">
         <!-- 오늘의집 로고 -->
         <div id="homelogo">
@@ -175,11 +180,6 @@
             </a>
         </div>
         <!-- 로그인 폼 -->
-        <c:if test="${param.flag == false }">
-			<script>
-				alert("로그인 실패! 다시 시도하세요!");
-			</script>
-		</c:if>
         <form action="/user/UserLoginOk.us" method="post" id="loginForm">
             <div class="login">
                 <input type="text" name="user_id" id="user_id" placeholder="아이디" required>

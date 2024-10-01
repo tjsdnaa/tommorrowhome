@@ -33,7 +33,7 @@ public class UserLoginOkAction implements Action{
             forward.setPath("/index.jsp");
         } else {
             // 로그인 실패
-            forward.setPath("/user/login.jsp?error=true");
+            forward.setPath("/user/login.jsp?flag=false");
         }
         return forward;
     }
