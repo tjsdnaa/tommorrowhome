@@ -35,8 +35,14 @@ public class JoinProdDAO {
     
     public void setJoinProd(CartChangeDTO cartnum){
     	try (SqlSession sqlSession = sqlSessionFactory.openSession()) {
-    		System.out.println("cartNum1 : " +cartnum.getProdcnt());
     		sqlSession.update("Join.setJoinProd", cartnum);
+    		sqlSession.commit();
+        }
+    }
+    
+    public void deleteJoinProd(CartChangeDTO cartnum){
+    	try (SqlSession sqlSession = sqlSessionFactory.openSession()) {
+    		sqlSession.delete("Join.deleteJoinProd", cartnum);
     		sqlSession.commit();
         }
     }
