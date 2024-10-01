@@ -186,7 +186,7 @@
                 <br/>
                 <input type="password" name="password" id="password" placeholder="비밀번호" required>
                 <p>
-                    <input class="btn" type="submit" value="로그인" onclick=""/>
+                    <input class="btn" type="submit" value="로그인"/>
                 </p>
             </div>
             <!-- 비밀번호 재설정 및 회원가입 -->
@@ -216,6 +216,6 @@
     <div class="footer">
         &copy; <a href="/index.jsp">tomorrow home, co.</a> All Rights Reserved
     </div>
-    <script src="./user.js"></script>
+    <!-- <script src="./user.js"></script> -->
 </body>
 </html>
