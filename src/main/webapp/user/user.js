@@ -91,7 +91,7 @@ function checkId() {
 
     // Ajax 요청 생성
     const xhr = new XMLHttpRequest();
-    xhr.open("POST", "/checkId", true); // 서버의 체크 아이디 API 경로
+    xhr.open("POST", "checkId.jsp", true); // 서버의 체크 아이디 API 경로
     xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
 
     // 서버에 요청 보내기
