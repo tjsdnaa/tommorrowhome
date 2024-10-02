@@ -191,6 +191,7 @@
 		        <div class="btn_element">
 		        	<button class="btn_id" onclick="checkId()">아이디 중복확인</button>
 		        	<p id="result_ID_val"></p>
+		        	
 		        </div>
 		        <!-- 비밀번호 입력 -->
 		        <div class="input_element">
