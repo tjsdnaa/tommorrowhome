@@ -1,11 +1,13 @@
 package com.kh.web.user.dao;
 
 import java.util.HashMap;
+import java.util.List;
 
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 
 import com.kh.mybatis.SqlMapConfig;
+import com.kh.web.cart.dto.CartProdDTO;
 
 
 public class UsersDAO {
@@ -41,4 +43,15 @@ public class UsersDAO {
 		
 		return result;
 	}
+	
+	//로그인 아이디 확인
+	public boolean checkId(String userId) {
+        if(((String) session.selectOne("Users.checkId",userId))==null) {
+        	return true;
+        }
+        else {
+        	return false;
+        }
+		
+    }
 }

@@ -53,7 +53,7 @@
                   <li class="header-upper__item upper__active">
                     <a href="">커뮤니티</a>
                   </li>
-                  <li class="header-upper__item"><a href="">쇼핑</a></li>
+                  <li class="header-upper__item"><a href="/shopping/ShoppingHome.sh">쇼핑</a></li>
                 </ul>
               </div>
             </div>
@@ -141,8 +141,8 @@
               </div>
                <!-- 쇼핑 하단 메뉴 추가 -->
            		 <div class="shopping-menu" style="display: none;"> <!-- 기본적으로 숨김 -->
-                <a class="header-lower__item active" href="">홈</a>
-                <a class="header-lower__item" href="">카테고리</a>
+                <a class="header-lower__item active" href="/shopping/ShoppingHome.sh">홈</a>
+                <a class="header-lower__item" href="/shopping/ShoppingCategory.sh?prod_category=furniture">카테고리</a>
             </div>
             </nav>
           </div>

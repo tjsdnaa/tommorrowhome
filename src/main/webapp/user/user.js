@@ -85,3 +85,18 @@ function sendit(){
 	// 폼으로 전달
 	frm.submit();
 }
+
+function checkId() {
+	
+            const userId = document.querySelector('#user_id').value;
+
+            const xhr = new XMLHttpRequest();
+            xhr.open('GET', 'checkId.jsp?user_id=' + encodeURIComponent(userId), true);
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === 4 && xhr.status === 200) {
+                    // 서버에서 반환된 결과를 alert으로 표시
+                    alert(xhr.responseText);
+                }
+            };
+            xhr.send();
+        }

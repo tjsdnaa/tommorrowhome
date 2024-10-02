@@ -46,4 +46,13 @@ public class JoinProdDAO {
     		sqlSession.commit();
         }
     }
+    // 결제 정보 가져오는 메서드 추가
+    public List<JoinProdDTO> getCheckoutProducts(int cartNum) {
+        System.out.println("Getting checkout products for cartNum: " + cartNum);
+        try (SqlSession sqlSession = sqlSessionFactory.openSession()) {
+            List<JoinProdDTO> checkoutProducts = sqlSession.selectList("Join.getCheckoutProducts", cartNum);
+            System.out.println("checkoutProducts : " + checkoutProducts);
+            return checkoutProducts;
+        }
+    }
 }
