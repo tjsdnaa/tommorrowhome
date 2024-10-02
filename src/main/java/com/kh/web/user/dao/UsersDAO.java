@@ -54,4 +54,8 @@ public class UsersDAO {
         }
 		
     }
+	
+	public String getPhoneNumber(String user_id) {
+	       return session.selectOne("Users.getPhoneNumber", user_id);
+	   }
 }
