@@ -241,51 +241,9 @@
 		        		<p class="result"></p>
 		        	</label>
 		        </div>
-		        <!-- 약관 동의 -->
-		        <!-- <div class="terms">
-		        	<label class="input_element">약관동의
-		        		<div>
-		        			<input type="checkbox" name="terms" id="terms">
-				            <span class="">전체동의
-								<span class=" ">선택항목에 대한 동의 포함</span>
-							</span>
-		        		</div>
-		        		<hr/>
-		        		<div>
-		        			<input type="checkbox" name="agree1" id="agree1" required/>
-				            <span class="">만 14세 이상입니다
-								<span class="reqired">(필수)</span>
-							</span>
-		        		</div>
-		        		<div>
-		        			<input type="checkbox" name="agree2" id="agree2" required />
-				            <span class="">이용약관
-								<span class=" ">(필수)</span>
-							</span>
-		        		</div>
-		        		<div>
-		        			<input type="checkbox" name="agree3" required/>
-				            <span class="">개인정보수집 및 이용동의
-					        	<span>(필수)</span>
-					        </span>
-		        		</div>
-		        		<div>
-		        			<input type="checkbox" name="agreeMarketUsage" id="agreeMarketUsage"/>
-				            <span class="">개인정보 마케팅 활용 동의
-								<span class=" ">(선택)</span>
-							</span>
-		        		</div>
-		        		<div>
-		        			<input type="checkbox" name="agreePromotion" id="agreePromotion"/>
-				            <span class="">이벤트, 쿠폰, 특가 알림 메일 및 SMS 등 수신
-				            	<span class="">(선택)</span>
-				            </span>
-		        		</div>
-		        	</label>
-		        </div> -->
 		        <!-- 가입 버튼 -->
 		        <div>
-		        	<input type="submit" class="btn" value="회원가입하기" onclick="sendit()"/>
+		        	<input type="submit" class="btn" value="회원가입하기" onclick="return sendit()"/>
 		        </div>
 		    </form>
 		    <!-- 로그인 페이지로 돌아가기 -->

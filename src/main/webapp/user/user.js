@@ -1,10 +1,7 @@
 /**
- * 
+ * 회원가입 폼 value 확인하는 자바스크립트
  */
-// 회원가입 폼 value 획인하는 자바스크립트
 function sendit(){
-	// console.log("connect check");
-	// alert("호출");
 	// 태그 호출
 	let frm = document.joinForm;
 	// 입력값 가져오기
@@ -46,13 +43,20 @@ function sendit(){
 		name.focus();
 		return false;
 	}
-	// 이메일 빈값처리
+	// 이메일 빈값 처리
 	if (email.value == "") {
 		alert("이메일을 입력해주세요");
 		email.focus();
 		return false;
 	}
-	// 닉네임 빈값처리
+	// 이메일 형식 체크
+	const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+	if (!emailPattern.test(email.value)) {
+		alert("유효한 이메일 주소를 입력해주세요");
+		email.focus();
+		return false;
+	}
+	// 닉네임 빈값 처리
 	if (nickname.value == "") {
 		alert("닉네임을 입력해주세요");
 		nickname.focus();
@@ -60,21 +64,24 @@ function sendit(){
 	}
 	// 닉네임 2 이상 20자 이하 처리
 	if (nickname.value.length < 2 || nickname.value.length > 20) {
-		alert("닉네임을 2 이상 20자 이하로 입력해주세요");
+		alert("닉네임을 2자 이상 20자 이하로 입력해주세요");
 		nickname.focus();
 		return false;
 	}
-	// 휴대폰 번호 빈값처리
+	// 휴대폰 번호 빈값 처리
 	if (tel.value == "") {
 		alert("휴대폰번호를 입력해주세요");
 		tel.focus();
 		return false;
 	}
+	// 휴대폰 번호 형식 체크 (숫자만 입력되었는지 확인)
+	const telPattern = /^[0-9]+$/;
+	if (!telPattern.test(tel.value)) {
+		alert("휴대폰번호는 숫자만 입력해주세요");
+		tel.focus();
+		return false;
+	}
+
 	// 폼으로 전달
 	frm.submit();
-
-}
-// 아이디 중복 체크
-function checkId() {
-           
 }
