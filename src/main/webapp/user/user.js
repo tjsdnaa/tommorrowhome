@@ -85,3 +85,30 @@ function sendit(){
 	// 폼으로 전달
 	frm.submit();
 }
+
+function checkId() {
+    let user_id = document.joinForm.user_id.value;
+
+    // Ajax 요청 생성
+    const xhr = new XMLHttpRequest();
+    xhr.open("POST", "/checkId", true); // 서버의 체크 아이디 API 경로
+    xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+
+    // 서버에 요청 보내기
+    xhr.send("user_id=" + encodeURIComponent(user_id));
+
+    // 서버 응답 처리
+    xhr.onreadystatechange = function() {
+        if (xhr.readyState == 4 && xhr.status == 200) {
+            const response = xhr.responseText.trim();
+
+            if (response === "1") {
+                alert("아이디가 중복되었습니다. 다른 아이디를 사용해주세요.");
+            } else if (response === "0") {
+                alert("사용 가능한 아이디입니다.");
+            } else {
+                alert("서버와의 통신 중 오류가 발생했습니다.");
+            }
+        }
+    };
+}
