@@ -44,11 +44,12 @@ public class UserFrontController extends HttpServlet{
 			// 회원가입을 완료했을때
 			case "/user/UserJoinOk.us" : {
 				forward = new UserJoinAction().execute(req, resp);
+				break;
 			}
 			// 로그아웃 버튼 눌렀을 때
 			case "/user/UserLogout.us" : { 
 				forward = new UserLogoutOkAction().execute(req,resp); 
-				// System.out.println("프론트 컨트롤러 도착");
+				break;
 			}
 		}
 		

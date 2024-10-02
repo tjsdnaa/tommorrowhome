@@ -32,13 +32,14 @@ public class UserJoinAction implements Action{
 		user.setNickname(nickname);
 		user.setTel(tel);
 		 
-		forward.setRedirect(true);
 			// dao에서 MyBatis로 커넥션된 db의 insert처리되면
 			if ( udao.join(user) ) {
 				// 회원가입 성공처리
+				forward.setRedirect(true);
 				forward.setPath("/user/login.jsp");
 			} else {
 				// 회원가입 실패처리
+				forward.setRedirect(true);
 				forward.setPath("/user/join.jsp");
 			}
 		return forward;
