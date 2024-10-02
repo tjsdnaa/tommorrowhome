@@ -9,7 +9,7 @@
 CartService cartService = new CartService();
     int cartNum = 1; // 예시값
     System.out.println(new JoinProdDAO().getCartProducts(cartNum));
-    List<JoinProdDTO> joinProducts = new JoinProdDAO().getCartProducts(cartNum);
+    List<JoinProdDTO> joinProducts = new JoinProdDAO().getCartProducts(23);
     int totalAmount = 0; // 장바구니 총 금액 초기화
 %>
 <!DOCTYPE html>
@@ -27,7 +27,7 @@ CartService cartService = new CartService();
     <header>
         <div class="header-wrapper">
             <div class="logo">
-                <h1><a href="index.jsp">내일의 집</a></h1>
+                <h1><a href="${pageContext.request.contextPath}/index.jsp">내일의 집</a></h1>
             </div>
             <nav>
                 <ul>
@@ -75,7 +75,7 @@ CartService cartService = new CartService();
                 <td><%=product.getPROD_NAME() %></td>
                 <td>
                     <form action="updateCart.jsp" method="post">
-                    	<input type="hidden" name="cartNum" value="<%= cartNum %>">
+                        <input type="hidden" name="cartNum" value="<%= cartNum %>">
                         <input type="hidden" name="prodNum" value="<%= product.getPROD_NUM() %>">
                         <input type="number" name="prodCnt" value="<%= product.getPROD_CNT() %>" min="1">
                         <input type="submit" class="btn btn-update" value="수량 변경">
@@ -111,11 +111,10 @@ CartService cartService = new CartService();
 
         <div class="cart-summary">
             <h2>총 상품금액: <%= totalAmount %>원</h2>
-            <h2>총 배송비: + 0원</h2>
-            <h2>총 할인금액: - 10,000원</h2>
-            <h2>결제금액: <%= totalAmount - 10000 %>원</h2> <!-- 총 금액에서 할인금액을 제외한 결제 금액 -->
+            <h2>총 배송비: + 0원</h2>     
+            <h2>결제금액: <%= totalAmount %>원</h2> 
         </div>
-        <a href="productList.jsp" class="back-link">상품 목록으로 돌아가기</a>
+       <a href="/order/order.jsp" class="back-link">결제하기</a>
     </div>
 
     <footer>
