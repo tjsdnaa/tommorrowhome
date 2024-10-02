@@ -166,7 +166,7 @@
 		<div>
 			<h1 class="join_title">회원가입</h1>
 			<!-- 간편로그인 -->
-	        <div class="sns_login">
+	        <!-- <div class="sns_login">
 	            <p class="sns_loginTitle">
 	                SNS계정으로 간편 로그인/회원가입
 	            </p>
@@ -175,7 +175,7 @@
 	                <input type="submit" id="kakao_login" value=""/>
 	                <input type="submit" id="naver_login" value=""/>
             	</p>
-	        </div>
+	        </div> -->
 	        <hr/>
 	        <!-- 회원가입 폼 -->
 		    <form action="/user/UserJoinOk.us" method="post" name="joinForm">

@@ -191,13 +191,13 @@
             </div>
             <!-- 비밀번호 재설정 및 회원가입 -->
             <div class="loginSet">
-                <span class="reset_pw"><a href="/user/pw_re.jsp">비밀번호 재설정</a></span>             
+                <!-- <span class="reset_pw"><a href="/user/pw_re.jsp">비밀번호 재설정</a></span>-->        
                 <span class="join"><a href="/user/UserJoin.us">회원가입</a></span>
             </div>
         </form>
         <br/>
         <!-- 간편로그인 -->
-        <div class="sns_login">
+        <!-- <div class="sns_login">
             <p class="sns_loginTitle">
                 SNS계정으로 간편 로그인/회원가입
             </p>
@@ -206,10 +206,10 @@
                 <input type="submit" id="kakao_login" value=""/>
                 <input type="submit" id="naver_login" value=""/>
             </p>
-        </div>
+        </div> -->
         <!-- 로그인 문제해결 페이지 -->
         <div class="loginerror">
-            <a href="/comunity/qna.jsp">로그인에 문제가 있으신가요?</a>
+            <a href="/app/qna/qna.jsp">로그인에 문제가 있으신가요?</a>
         </div>
     </div>    
     <!-- 푸터 -->
