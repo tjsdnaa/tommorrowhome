@@ -41,7 +41,4 @@ public class UsersDAO {
 		
 		return result;
 	}
-	
-	// logout 처리
-
 }

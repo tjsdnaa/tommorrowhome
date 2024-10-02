@@ -45,8 +45,8 @@ public class UserFrontController extends HttpServlet{
 			case "/user/UserJoinOk.us" : {
 				forward = new UserJoinAction().execute(req, resp);
 			}
-			// 로그아웃 했을 때
-			case "/user/UserLogoutOk.us" : { 
+			// 로그아웃 버튼 눌렀을 때
+			case "/user/UserLogout.us" : { 
 				forward = new UserLogoutOkAction().execute(req,resp); 
 				// System.out.println("프론트 컨트롤러 도착");
 			}
