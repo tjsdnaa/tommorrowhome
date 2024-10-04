@@ -22,12 +22,9 @@ public class JoinProdDAO {
     public List<JoinProdDTO> getCartProducts(int cartNum){
     	try (SqlSession sqlSession = sqlSessionFactory.openSession()) {
     		List<JoinProdDTO> joinprod = new ArrayList<>();
-    		List<JoinProdDTO> joinprod2 = new ArrayList<>();
     		
     		joinprod = sqlSession.selectList("Join.getJoinProd",cartNum);
-    		
-    		joinprod2 = sqlSession.selectList("Join.getJoinProd2");
-    		return joinprod;
+       		return joinprod;
         }
     }
     
@@ -54,5 +51,14 @@ public class JoinProdDAO {
             System.out.println("checkoutProducts : " + checkoutProducts);
             return checkoutProducts;
         }
+    }
+    //cartnum 가져오기
+    public int getCartNum(String userId){	
+    	int cartNum=1;
+    	try (SqlSession sqlSession = sqlSessionFactory.openSession()) {
+    		cartNum = sqlSession.selectOne("CartMapper.getCartNum", userId);
+        }
+    	return cartNum;
+        
     }
 }

@@ -102,23 +102,5 @@ public class ShoppingDAO {
 		
 		return result;
 	}
-	
-	public boolean insertOrder(OrdersDTO ordersDTO) {
-		boolean result = false;
-		if(session.insert("Shopping.insertOrder", ordersDTO) == 1) {
-			result = true;
-		}
-		
-		return result;
-	}
-	
-	public boolean setJoinProd(OrderProdDTO orderProdDTO){
-		boolean result = false;
-		if(session.update("Shopping.updateOrder", orderProdDTO) == 1) {
-			result = true;
-			session.commit();
-		}
-		return result;
-    }
-	
+
 }

@@ -6,10 +6,10 @@
 <%@ page import="com.kh.cart.service.CartService" %>
 <%@ page import="com.kh.web.cart.dto.ProductDTO" %>
 <%
-CartService cartService = new CartService();
-    int cartNum = 1; // 예시값
-    System.out.println(new JoinProdDAO().getCartProducts(cartNum));
-    List<JoinProdDTO> joinProducts = new JoinProdDAO().getCartProducts(23);
+	CartService cartService = new CartService();
+    int cartNum = new JoinProdDAO().getCartNum((String)session.getAttribute("user_id")); // 예시값
+	
+    List<JoinProdDTO> joinProducts = new JoinProdDAO().getCartProducts(cartNum);
     int totalAmount = 0; // 장바구니 총 금액 초기화
 %>
 <!DOCTYPE html>

@@ -17,4 +17,9 @@
         SET PROD_CNT = #{prodCnt}, PROD_PRICE = #{prodPrice}
         WHERE CART_NUM = #{cartNum}
     </update>
+    
+    <select id="getCartNum" parameterType="String" resultType="int">
+        SELECT CART_NUM FROM SHOPPING_CART WHERE USER_ID = #{userId} AND ROWNUM=1
+    </select>
+    
 </mapper>

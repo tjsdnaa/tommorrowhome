@@ -8,19 +8,7 @@
 		FROM PRODUCT a
 		JOIN CART_PROD b
 		ON a.PROD_NUM = b.PROD_NUM
-		<!-- WHERE a.PROD_NUM = #{cartNum} -->
-		<!-- WHERE a.PROD_NUM = 1 -->
-    </select>
-    
-    <select id="getJoinProd2" resultType="joinproddto">
-	    SELECT  a.PROD_IMAGE as prodImage,
-	    		a.PROD_NAME as prodName,
-	    		b.PROD_CNT	as prodCnt,
-	    		a.PROD_PRICE as prodPrice ,
-	    		a.PROD_NUM  as prodNum
-		FROM PRODUCT a
-		JOIN CART_PROD b
-		ON a.PROD_NUM =b.PROD_NUM
+		WHERE b.CART_NUM = #{cartNum}
     </select>
     
     <update id="setJoinProd" parameterType="CartChangeDTO">
