@@ -83,7 +83,9 @@ public class ShoppingDAO {
 	
 	
 	// SHOPPING_CART, CART_PROD 테이블 CART_NUM, CART_NUM 자동 시퀀스
-	public int getShoCartSeq() { return session.selectOne("Shopping.getShoCartSeq"); }
+	public int getShoCartSeq(String userId) {
+		return session.selectOne("Shopping.getShoCartSeq",userId); 
+	}
 	
 	// 장바구니 생성
 	public boolean addShoCart(ShoppingCartDTO shocart) {

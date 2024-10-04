@@ -56,7 +56,8 @@
     <!-- shoppingcart 시퀀스 -->
     <select id="getShoCartSeq" parameterType = "String" resultType="int">
     	SELECT CART_NUM FROM SHOPPING_CART
-    	WHERE USER_ID = #{USER_ID}
+    	WHERE USER_ID = #{userId}
+    	AND ROWNUM = 1
     </select>
     
     <!-- cartprod_seq -->

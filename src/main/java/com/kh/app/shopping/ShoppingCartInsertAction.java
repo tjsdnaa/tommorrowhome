@@ -49,7 +49,7 @@ public class ShoppingCartInsertAction implements Action {
 		
 		
 		if(sdao.addShoCart(shocart)) {
-			int cartNum = sdao.getShoCartSeq();
+			int cartNum = sdao.getShoCartSeq((String) session.getAttribute("user_id"));
 			cart.setCART_NUM(cartNum);
 			cart.setPROD_NUM(prod_num);
 			cart.setPROD_CNT(productCount);
