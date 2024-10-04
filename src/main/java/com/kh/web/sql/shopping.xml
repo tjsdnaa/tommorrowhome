@@ -77,7 +77,7 @@
     
     <!-- 구매 -->
     <insert id="insertOrder" parameterType="com.kh.app.shopping.dao.OrderProdDTO">
-    	INSERT INTO OPDER_PROD
+    	INSERT INTO ORDER_PROD
 		VALUES (#{ORDER_NUM}, #{PROD_NUM},#{PROD_CNT},#{PRICE})
     </insert>
     <!-- total_price 업데이트 -->
