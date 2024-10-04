@@ -9,7 +9,7 @@ public class ReviewDTO {
     private String REVIEW_CONTENTS;
     private Date REVIEW_DATE;
     private String IMAGES_PATH;
-    private float RATING;
+    private double RATING;
     
 	public int getREVIEWID() {
 		return REVIEWID;
@@ -47,13 +47,12 @@ public class ReviewDTO {
 	public void setIMAGES_PATH(String iMAGES_PATH) {
 		IMAGES_PATH = iMAGES_PATH;
 	}
-	public float getRATING() {
+	public double getRATING() {
 		return RATING;
 	}
-	public void setRATING(float rATING) {
+	public void setRATING(double rATING) {
 		RATING = rATING;
 	}
     
-    
-    
+	
 }

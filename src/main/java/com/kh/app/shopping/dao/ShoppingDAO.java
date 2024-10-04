@@ -59,7 +59,7 @@ public class ShoppingDAO {
 	public int getSeq() { return session.selectOne("Shopping.getSeq"); }
 	
 	// 리뷰
-	public boolean addReview(Review2DTO review) {
+	public boolean addReview(ReviewDTO review) {
 		boolean result = false;
 		if(session.insert("Shopping.addReview", review) == 1) {
 			result = true;
@@ -67,7 +67,7 @@ public class ShoppingDAO {
 		
 		return result;
 	}
-	public boolean insertReview(Review2DTO review) {
+	public boolean insertReview(ReviewDTO review) {
 		boolean result = false;
 		if(session.insert("Shopping.insertReview", review) == 1) {
 			result = true;

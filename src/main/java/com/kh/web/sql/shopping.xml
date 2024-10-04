@@ -40,16 +40,11 @@
     </select>
     
     <!-- 리뷰 작성 -->
-    <!-- <select id="addReview" parameterType="reviewdto">
+    <select id="addReview" parameterType="reviewdto">
     	INSERT INTO REVIEW VALUES 
-    	(review_seq.nextval, #{PROD_NUM}, #{USER_ID}, #{REVIEW_CONTENTS}, #{REVIEW_DATE}, #{IMAGES_PATH}, #{RATING})
-    </select> -->
+    	(review_seq.nextval, #{PROD_NUM}, #{USER_ID, jdbcType=VARCHAR}, #{REVIEW_CONTENTS}, #{REVIEW_DATE}, #{IMAGES_PATH, jdbcType=VARCHAR}, #{RATING})
+    </select>
     
-    <!-- 리뷰 작성 USER_ID, RATING 뺀 테스트 -->
-    <insert id="addReview" parameterType="review2dto">
-    	INSERT INTO REVIEW2 VALUES 
-    	(review_seq.nextval, #{PROD_NUM}, #{REVIEW_CONTENTS}, #{REVIEW_DATE, jdbcType=DATE}, #{RATING})
-    </insert>
     
     
     

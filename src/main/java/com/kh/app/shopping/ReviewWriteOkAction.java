@@ -1,6 +1,5 @@
 package com.kh.app.shopping;
 
-import com.kh.app.shopping.dao.Review2DTO;
 import com.kh.app.shopping.dao.ReviewDTO;
 import com.kh.app.shopping.dao.ShoppingDAO;
 import com.kh.web.action.Action;
@@ -15,8 +14,7 @@ public class ReviewWriteOkAction implements Action {
 	public ActionForward execute(HttpServletRequest request, HttpServletResponse response) {
 		ActionForward forward = new ActionForward();
 		ShoppingDAO sdao = new ShoppingDAO();
-		/* ReviewDTO review = new ReviewDTO(); */
-		Review2DTO review = new Review2DTO();
+		ReviewDTO review = new ReviewDTO();
 		
 		String REVIEW_CONTENTS = request.getParameter("REVIEW_CONTENTS");
 		

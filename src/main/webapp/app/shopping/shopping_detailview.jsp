@@ -8,13 +8,15 @@
 <meta charset="UTF-8">
 <title>shopping_detailview</title>
 <link href="/app/shopping/css/shopping_detailview.css" rel="stylesheet" type="text/css">
+
 </head>
 <body>
-
+<c:set var="prod_num" value="${param.prod_num }" />
 <c:set var="product" value="${requestScope.product }"/>
 <c:set var="review" value="${requestScope.reivew }"/>
 
 <div class="wrap">
+ 
 	<div class="container">
 		<%-- <nav>
 			<ol>
@@ -95,10 +97,10 @@
 								<svg fill="#35C5F0" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><defs><path id="star-path-1.000" d="M11.9996 19.7201L6.32294 22.1251C5.5626 22.4472 5.005 22.0311 5.0755 21.2188L5.60855 15.0767L1.5671 10.421C1.02579 9.79745 1.24924 9.13855 2.04358 8.95458L8.04973 7.56354L11.2287 2.28121C11.6545 1.57369 12.3502 1.5826 12.7706 2.28121L15.9496 7.56354L21.9557 8.95458C22.7602 9.1409 22.9667 9.8053 22.4322 10.421L18.3907 15.0767L18.9238 21.2188C18.9952 22.0414 18.4271 22.4432 17.6764 22.1251L11.9996 19.7201Z"></path><clipPath id="star-clip-1.000"><rect x="0" y="0" width="24" height="24"></rect></clipPath></defs><use xlink:href="#star-path-1.000" fill="#DBDBDB"></use><use clip-path="url(#star-clip-1.000)" xlink:href="#star-path-1.000"></use></svg>
 							</div>
 						</div>
-						<div class="review_count">
+						<!-- <div class="review_count">
 							<div class="review_num">30,790</div>
 							<div class="review_num_text">개 리뷰</div>
-						</div>
+						</div> -->
 					</div>
 					<div class="product_price">
 						<div class="product_price_num">${product.prod_price }</div>
@@ -242,7 +244,7 @@
 						<div class="product_review_wrap" id="product_review_wrap">
 							<div class="product_review_title">
 								<div class="product_review_title_left">
-									<span><h2>리뷰</h2></span><span id="product_review_num"><h2>28,694</h2></span>
+									<span><h2>리뷰</h2></span><span id="product_review_num"><!-- <h2>28,694</h2> --></span>
 								</div>
 								<div class="product_review_title_right">
 									<button class="write" id="modal_review_write">리뷰쓰기</button>
@@ -251,7 +253,7 @@
 							
 							<div class="product_review_feed_wrap">
 								<!-- 리뷰 평균 그래프 -->
-								<div class="rating_head_wrap">
+								<!-- <div class="rating_head_wrap">
 									<div class="rating_average_wrap">
 										<div class="stars_average">
 											<div class="stars_average_star">★★★★☆</div><div class="stars_average_num">4.8</div>
@@ -262,7 +264,7 @@
 											</div>
 										</div>
 									</div>
-								</div>
+								</div> -->
 								
 								<!-- 리뷰 nav -->
 								<div class="review_wrap">
@@ -270,7 +272,7 @@
 										<div class="review_filter_order">
 											<button class="review_filter_best">베스트순</button>
 											<button class="review_filter_new">최신순</button>
-											<button class="review_filter_pictuer"><div class="img_ex"></div><div>사진리뷰</div></button>
+											<button class="review_filter_pictuer"><!-- <div class="img_ex"></div> --><div>사진리뷰</div></button>
 										</div>
 									</div>
 									
@@ -286,7 +288,7 @@
 													</div>	
 													<div class="user_inform">
 														<p>${review.USER_ID }</p>
-														<span class="user_star">★<%-- ${review.RATING } --%>점</span>
+														<span class="user_star">★${review.RATING }점</span>
 														<span class="buy_date">${review.REVIEW_DATE} 작성</span>
 													</div>
 												</div>
