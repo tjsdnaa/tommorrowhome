@@ -74,5 +74,20 @@
     	INSERT INTO CART_PROD VALUES
 		(cartprod_seq.nextval, #{PROD_NUM}, #{PROD_CNT}, #{PROD_PRICE})
     </insert>
+    
+    <!-- 구매 -->
+    <insert id="insertOrder" parameterType="com.kh.app.shopping.dao.OrderProdDTO">
+    	INSERT INTO OPDER_PROD
+		VALUES (#{ORDER_NUM}, #{PROD_NUM},#{PROD_CNT},#{PRICE})
+    </insert>
+    <!-- total_price 업데이트 -->
+	<update id ="updateOrder" parameterType="com.kh.app.shopping.dao.OrdersDTO">>
+    	UPDATE ORDERS 
+		SET TOTAL_PRICE = 	
+			(SELECT sum(op.prod_cnt * op.price)
+			FROM ORDER_PROD op
+			WHERE op.ORDER_NUM = ORDERS.ORDER_NUM)
+		WHERE ORDER_NUM = #{ORDER_NUM}
+    </update>
 	
 </mapper>
