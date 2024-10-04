@@ -9,7 +9,7 @@
 		JOIN CART_PROD b
 		ON a.PROD_NUM = b.PROD_NUM
 		<!-- WHERE a.PROD_NUM = #{cartNum} -->
-		WHERE a.PROD_NUM = 1
+		<!-- WHERE a.PROD_NUM = 1 -->
     </select>
     
     <select id="getJoinProd2" resultType="joinproddto">

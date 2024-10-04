@@ -58,7 +58,7 @@ public class ShoppingCartInsertAction implements Action {
 			sdao.insertCart(cart);
 			
 			forward.setRedirect(true);
-			forward.setPath("/app/shopping/shopping_detailview.jsp?prod_num=" + prod_num);
+			forward.setPath("/cart/cart.jsp");
 	    }
 	    
 	    return forward;
