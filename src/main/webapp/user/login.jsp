@@ -216,6 +216,5 @@
     <div class="footer">
         &copy; <a href="/index.jsp">tomorrow home, co.</a> All Rights Reserved
     </div>
-    <!-- <script src="./user.js"></script> -->
 </body>
 </html>

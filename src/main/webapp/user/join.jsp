@@ -184,13 +184,12 @@
 		        	<label class="input_title">
 		        		<p>아이디</p>
 		        		<input type="text" name="user_id" id="user_id" placeholder="아이디" required>
-		        		<p class="result"></p>
 		        	</label>
 		        </div>
 		        <!-- 아이디 중복인증 -->
 		        <div class="btn_element">
 		        	<button class="btn_id" onclick="checkId()">아이디 중복확인</button>
-		        	<p id="result_ID_val"></p>
+		        	<!-- <p id="result_ID_val"></p> -->
 		        	
 		        </div>
 		        <!-- 비밀번호 입력 -->
@@ -199,7 +198,6 @@
 		        		<p>비밀번호</p>
 		        		<div class="input_context">영문, 숫자를 포함한 8자 이상의 비밀번호를 입력해주세요.</div>
 		        		<input type="password" name="password"  id="password" placeholder="비밀번호" required>
-		        		<p class="result"></p>
 		        	</label>
 		        </div>
 		        <!-- 비밀번호 확인 -->
@@ -207,7 +205,6 @@
 		        	<label class="input_title">
 		        		<p>비밀번호 확인</p>
 		        		<input type="password" name="password_re"  id="password_re" placeholder="비밀번호 확인" required>
-		        		<p class="result_PW_val"></p>
 		        	</label>
 		        </div>
 		     	<!-- 이름 입력 -->
@@ -215,7 +212,6 @@
 		        	<label class="input_title">
 		        		<p>이름</p>
 		        		<input type="text" name="name" id="name" placeholder="이름"/>
-		        		<p class="result"></p>
 		        	</label>
 		        </div>
 		        <!-- 이메일 입력 -->
@@ -223,7 +219,6 @@
 		        	<label class="input_title">
 		        		<p>이메일</p>
 		        		<input type="text" name="email" id="email" placeholder="이메일">
-		        		<p class="result"></p>
 		        	</label>
 		        </div>
 		        <!-- 닉네임 입력 -->
@@ -231,7 +226,6 @@
 		        	<label class="input_title">
 		        		<p>닉네임</p>
 		        		<input type="text" name="nickname"  id="nickname" placeholder="별명 (2~20자)">
-		        		<p class="result"></p>
 		        	</label>
 		        </div>
 		        <!-- 휴대폰 번호 입력 -->
@@ -239,7 +233,6 @@
 		        	<label class="input_title">
 		        		<p>휴대폰 번호</p>
 		        		<input type="text" name="tel" id="tel" placeholder="휴대폰">
-		        		<p class="result"></p>
 		        	</label>
 		        </div>
 		        <!-- 가입 버튼 -->
