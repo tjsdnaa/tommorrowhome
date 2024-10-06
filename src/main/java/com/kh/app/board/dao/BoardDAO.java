@@ -73,8 +73,7 @@ public class BoardDAO {
 	
 			result = true; 
 		}
-	  
-		return false; 
+		return result; 
 	}
 	 
 	
