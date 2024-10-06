@@ -5,6 +5,11 @@
 <head>
 <meta charset="UTF-8">
 <title>회원가입</title>
+	<!-- 구글 폰트 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&family=Poppins:wght@300&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css?family=Gamja+Flower:400" rel="stylesheet"/>
 <style>
     	body {
 		    padding-top: 40px;
@@ -29,8 +34,10 @@
 		}
 		
 		#homelogo a {
-			font-weight: bold;
+			font-family: "Gamja Flower";
+			font-weight: 700;
 		    font-size: 26px;
+	    	cursor: pointer;
 		    color: #35c5f0;
 		    margin-bottom: 30px;
 		    text-decoration: none;
@@ -112,7 +119,7 @@
 		    box-sizing: border-box;
 		    border-radius: 6px 6px 6px 6px;
 		}
-		.btn_id{
+		#btn_id{
 			font-weight: bold;
 		    background-color: rgb(247, 248, 250);
 		    color: rgb(194, 200, 204);
@@ -148,7 +155,7 @@
 		    margin-top: 30px;
 		}
 		a {
-			text-decoration: underline;
+			text-decoration: none;
 		    font-weight: bold;
 		    display: inline-block;
 		    padding-left: 10px;
@@ -159,7 +166,7 @@
 <body>
 	<div id="homelogo">
             <a href="/index.jsp">
-                오늘의집
+                내일의 집
             </a>
     </div>
 	<div class="content">
@@ -188,7 +195,7 @@
 		        </div>
 		        <!-- 아이디 중복인증 -->
 		        <div class="btn_element">
-		        	<button class="btn_id" onclick="checkId()">아이디 중복확인</button>		        	
+		        	<button class="btn_id" id="btn_id" onclick="checkId()">아이디 중복확인</button>		        	
 		        </div>
 		        <!-- 비밀번호 입력 -->
 		        <div class="input_element">

@@ -6,6 +6,11 @@
 <head>
 <meta charset="UTF-8">
 <title>로그인</title>
+	<!-- 구글 폰트 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&family=Poppins:wght@300&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css?family=Gamja+Flower:400" rel="stylesheet"/>
 <style>
 	/* 전체 콘텐츠 중앙 정렬 */
 	body {
@@ -33,8 +38,10 @@
 	}
 	
 	#homelogo a {
-		font-weight: bold;
+		font-family: "Gamja Flower";
+		font-weight: 700;
 	    font-size: 26px;
+    	cursor: pointer;
 	    color: #35c5f0;
 	    margin-bottom: 30px;
 	    text-decoration: none;
@@ -176,7 +183,7 @@
         <!-- 오늘의집 로고 -->
         <div id="homelogo">
             <a href="/index.jsp">
-                오늘의집
+                내일의 집
             </a>
         </div>
         <!-- 로그인 폼 -->

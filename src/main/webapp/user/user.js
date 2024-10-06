@@ -91,18 +91,35 @@ function sendit(){
 	}
 	
 }
+
+document.getElementById("user_id").addEventListener("input", function() {
+	let user_id = document.getElementById("user_id").value;
+	let btn_id = document.getElementById("btn_id");
+	
+	if (user_id!=null && user_id.trim() != "") {
+		btn_id.style.color = "#35c5f0";        // 텍스트 색상
+		btn_id.style.borderColor = "#35c5f0";  // 테두리 색상
+		btn_id.style.backgroundColor = "white";
+	} else {
+		btn_id.style.color = "";        
+		btn_id.style.borderColor = ""; 
+		btn_id.style.backgroundColor = "";
+	}
+});
+			
+
 // 아이디 중복확인
 function checkId() {
 	
-            const user_id = document.querySelector('#user_id').value;
-
-            const xhr = new XMLHttpRequest();
-            xhr.open('GET', 'checkId.jsp?user_id=' + encodeURIComponent(user_id), true);
-            xhr.onreadystatechange = function () {
-                if (xhr.readyState === 4 && xhr.status === 200) {
-                    // 서버에서 반환된 결과를 alert으로 표시
-                    alert(xhr.responseText);
-                }
-            };
-            xhr.send();
+    const user_id = document.querySelector('#user_id').value;
+	
+    const xhr = new XMLHttpRequest();
+    xhr.open('GET', 'checkId.jsp?user_id=' + encodeURIComponent(user_id), true);
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState === 4 && xhr.status === 200) {
+            // 서버에서 반환된 결과를 alert으로 표시
+            alert(xhr.responseText);
         }
+    };
+    xhr.send();
+}

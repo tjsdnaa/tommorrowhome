@@ -98,8 +98,8 @@ if (session.getAttribute("user_id") == null) {
             <div class="header-right">
                 <ul style="display: flex; margin: 0; padding: 0; list-style: none;">
                     <li style="margin-right: 20px;"><a href="cart.jsp">장바구니</a></li>
-                    <li style="margin-right: 20px;"><a href="login.jsp">로그인</a></li>
-                    <li style="margin-right: 20px;"><a href="register.jsp">회원가입</a></li>
+                    <li style="margin-right: 20px;"><a href="/user/UserLogin.us">로그인</a></li>
+                    <li style="margin-right: 20px;"><a href="/user/UserJoin.us">회원가입</a></li>
                     <li><a href="customerService.jsp">고객센터</a></li>
                 </ul>
             </div>
