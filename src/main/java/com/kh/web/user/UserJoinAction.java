@@ -16,31 +16,24 @@ public class UserJoinAction implements Action{
 		UsersDTO user = new UsersDTO();
 		UsersDAO udao = new UsersDAO();
 		
-		String user_id = req.getParameter("user_id");
-		String name = req.getParameter("name");
-		String email = req.getParameter("email");
-		String password = req.getParameter("password");
-		String nickname = req.getParameter("nickname");
-		String tel = req.getParameter("tel");
-		
-		
 		// 요청받아온 키값을 dto에 세팅
-		user.setUser_id(user_id);
-		user.setName(name);
-		user.setEmail(email);
-		user.setPassword(password);
-		user.setNickname(nickname);
-		user.setTel(tel);
-		 
-		forward.setRedirect(true);
-			// dao에서 MyBatis로 커넥션된 db의 insert처리되면
-			if ( udao.join(user) ) {
-				// 회원가입 성공처리
-				forward.setPath("/user/login.jsp");
-			} else {
-				// 회원가입 실패처리
-				forward.setPath("/user/join.jsp");
-			}
+		user.setUser_id(req.getParameter("user_id"));
+		user.setName(req.getParameter("name"));
+		user.setEmail(req.getParameter("email"));
+		user.setPassword(req.getParameter("password"));
+		user.setNickname(req.getParameter("nickname"));
+		user.setTel(req.getParameter("tel"));
+		
+		// dao에서 MyBatis로 커넥션된 db의 insert처리되면
+		if ( udao.join(user) ) {
+			// 회원가입 성공처리
+			forward.setRedirect(true);
+			forward.setPath("/user/login.jsp");
+		} else {
+			// 회원가입 실패처리
+			forward.setRedirect(true);
+			forward.setPath("/user/join.jsp");
+		}
 		return forward;
 	}
 

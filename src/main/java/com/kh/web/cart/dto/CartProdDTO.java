@@ -1,10 +1,10 @@
 package com.kh.web.cart.dto;
 
 public class CartProdDTO {
-    private int cartNum;           // CART_NUM
-    private int prodNum;           // PROD_NUM
-    private int prodCnt;           // PROD_CNT
-    private int prodPrice;         // PROD_PRICE
+    private int CART_NUM;           // CART_NUM
+    private int PROD_NUM;           // PROD_NUM
+    private int PROD_CNT;           // PROD_CNT
+    private int PROD_PRICE;         // PROD_PRICE
     private ProductDTO product;
 
     // 기본 생성자
@@ -12,51 +12,52 @@ public class CartProdDTO {
 
     // 매개변수를 받는 생성자
     public CartProdDTO(int cartNum, int prodNum, int prodCnt, int prodPrice, ProductDTO product) {
-        this.cartNum = cartNum;
-        this.prodNum = prodNum;
-        this.prodCnt = prodCnt;
-        this.prodPrice = prodPrice;
+        this.CART_NUM = cartNum;
+        this.PROD_NUM = prodNum;
+        this.PROD_CNT = prodCnt;
+        this.PROD_PRICE = prodPrice;
         this.product = product;
     }
 
     public ProductDTO getProduct() {
-		return product;
-	}
+      return product;
+   }
 
-	public void setProduct(ProductDTO product) {
-		this.product = product;
-	}
+   public void setProduct(ProductDTO product) {
+      this.product = product;
+   }
 
-	// Getters and Setters
-    public int getCartNum() {
-        return cartNum;
-    }
+public int getCART_NUM() {
+	return CART_NUM;
+}
 
-    public void setCartNum(int cartNum) {
-        this.cartNum = cartNum;
-    }
+public void setCART_NUM(int cART_NUM) {
+	CART_NUM = cART_NUM;
+}
 
-    public int getProdNum() {
-        return prodNum;
-    }
+public int getPROD_NUM() {
+	return PROD_NUM;
+}
 
-    public void setProdNum(int prodNum) {
-        this.prodNum = prodNum;
-    }
+public void setPROD_NUM(int pROD_NUM) {
+	PROD_NUM = pROD_NUM;
+}
 
-    public int getProdCnt() {
-        return prodCnt;
-    }
+public int getPROD_CNT() {
+	return PROD_CNT;
+}
 
-    public void setProdCnt(int prodCnt) {
-        this.prodCnt = prodCnt;
-    }
+public void setPROD_CNT(int pROD_CNT) {
+	PROD_CNT = pROD_CNT;
+}
 
-    public int getProdPrice() {
-        return prodPrice;
-    }
+public int getPROD_PRICE() {
+	return PROD_PRICE;
+}
 
-    public void setProdPrice(int prodPrice) {
-        this.prodPrice = prodPrice;
-    }
+public void setPROD_PRICE(int pROD_PRICE) {
+	PROD_PRICE = pROD_PRICE;
+}
+
+   
 }

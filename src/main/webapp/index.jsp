@@ -53,7 +53,7 @@
                   <li class="header-upper__item upper__active">
                     <a href="">커뮤니티</a>
                   </li>
-                  <li class="header-upper__item"><a href="">쇼핑</a></li>
+                  <li class="header-upper__item"><a href="/shopping/ShoppingHome.sh">쇼핑</a></li>
                 </ul>
               </div>
             </div>
@@ -64,12 +64,26 @@
   </div>
   <a href="<%=request.getContextPath()%>/cart/cart.jsp"><i class="fas fa-shopping-cart"></i></a>
   <ul>
-    <li><a href="/user/UserLogin.us">로그인</a></li>
-    <li><a href="">회원가입</a></li>
-    <li>
-    <button class="header-upper__serviceBt">고객센터</button>
-    <!-- 고객센터 관련 리스트 -->
-    <div class="header-upper__serviceLists" style="display: none;"> <!-- 기본적으로 숨김 -->
+     <%
+        // 세션에 사용자 정보가 있는지 확인
+        String user_id = (String)session.getAttribute("user_id");
+        if (user_id == null) {
+            // 로그인되지 않은 상태
+    %>
+      	<li><a href="/user/UserLogin.us">로그인</a></li>
+    	<li><a href="/user/UserJoin.us">회원가입</a></li>
+    <%
+        } else {
+            // 로그인된 상태
+    %>
+        <li><a href="/user/UserLogout.us">로그아웃</a></li>
+    <%
+        }
+    %>
+	    <li>
+	    <button class="header-upper__serviceBt">고객센터</button>
+	    <!-- 고객센터 관련 리스트 -->
+	    <div class="header-upper__serviceLists" style="display: none;"> <!-- 기본적으로 숨김 -->
       <ul>
         <li><a href="/board/BoardList.no"><h4>공지사항</h4></a></li>
         <li><a href="/chat/chatmain.ch"><h4>채팅방</h4></a></li>
@@ -127,8 +141,8 @@
               </div>
                <!-- 쇼핑 하단 메뉴 추가 -->
            		 <div class="shopping-menu" style="display: none;"> <!-- 기본적으로 숨김 -->
-                <a class="header-lower__item active" href="">홈</a>
-                <a class="header-lower__item" href="">카테고리</a>
+                <a class="header-lower__item active" href="/shopping/ShoppingHome.sh">홈</a>
+                <a class="header-lower__item" href="/shopping/ShoppingCategory.sh?prod_category=furniture">카테고리</a>
             </div>
             </nav>
           </div>

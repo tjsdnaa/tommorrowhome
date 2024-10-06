@@ -166,7 +166,7 @@
 		<div>
 			<h1 class="join_title">회원가입</h1>
 			<!-- 간편로그인 -->
-	        <div class="sns_login">
+	        <!-- <div class="sns_login">
 	            <p class="sns_loginTitle">
 	                SNS계정으로 간편 로그인/회원가입
 	            </p>
@@ -175,7 +175,7 @@
 	                <input type="submit" id="kakao_login" value=""/>
 	                <input type="submit" id="naver_login" value=""/>
             	</p>
-	        </div>
+	        </div> -->
 	        <hr/>
 	        <!-- 회원가입 폼 -->
 		    <form action="/user/UserJoinOk.us" method="post" name="joinForm">
@@ -184,29 +184,25 @@
 		        	<label class="input_title">
 		        		<p>아이디</p>
 		        		<input type="text" name="user_id" id="user_id" placeholder="아이디" required>
-		        		<p class="result"></p>
 		        	</label>
 		        </div>
 		        <!-- 아이디 중복인증 -->
 		        <div class="btn_element">
-		        	<button class="btn_id" onclick="checkId()">아이디 중복확인</button>
-		        	<p id="result_ID_val"></p>
+		        	<button class="btn_id" onclick="checkId()">아이디 중복확인</button>		        	
 		        </div>
 		        <!-- 비밀번호 입력 -->
 		        <div class="input_element">
 		        	<label class="input_title">
 		        		<p>비밀번호</p>
 		        		<div class="input_context">영문, 숫자를 포함한 8자 이상의 비밀번호를 입력해주세요.</div>
-		        		<input type="password" name="password"  id="password" placeholder="비밀번호" required>
-		        		<p class="result"></p>
+		        		<input type="password" name="password" id="password" placeholder="비밀번호" required>
 		        	</label>
 		        </div>
 		        <!-- 비밀번호 확인 -->
 		        <div class="input_element">
 		        	<label class="input_title">
 		        		<p>비밀번호 확인</p>
-		        		<input type="password" name="password_re"  id="password_re" placeholder="비밀번호 확인" required>
-		        		<p class="result_PW_val"></p>
+		        		<input type="password" name="password_re" id="password_re" placeholder="비밀번호 확인" required>
 		        	</label>
 		        </div>
 		     	<!-- 이름 입력 -->
@@ -214,7 +210,6 @@
 		        	<label class="input_title">
 		        		<p>이름</p>
 		        		<input type="text" name="name" id="name" placeholder="이름"/>
-		        		<p class="result"></p>
 		        	</label>
 		        </div>
 		        <!-- 이메일 입력 -->
@@ -222,7 +217,6 @@
 		        	<label class="input_title">
 		        		<p>이메일</p>
 		        		<input type="text" name="email" id="email" placeholder="이메일">
-		        		<p class="result"></p>
 		        	</label>
 		        </div>
 		        <!-- 닉네임 입력 -->
@@ -230,7 +224,6 @@
 		        	<label class="input_title">
 		        		<p>닉네임</p>
 		        		<input type="text" name="nickname"  id="nickname" placeholder="별명 (2~20자)">
-		        		<p class="result"></p>
 		        	</label>
 		        </div>
 		        <!-- 휴대폰 번호 입력 -->
@@ -238,54 +231,11 @@
 		        	<label class="input_title">
 		        		<p>휴대폰 번호</p>
 		        		<input type="text" name="tel" id="tel" placeholder="휴대폰">
-		        		<p class="result"></p>
 		        	</label>
 		        </div>
-		        <!-- 약관 동의 -->
-		        <!-- <div class="terms">
-		        	<label class="input_element">약관동의
-		        		<div>
-		        			<input type="checkbox" name="terms" id="terms">
-				            <span class="">전체동의
-								<span class=" ">선택항목에 대한 동의 포함</span>
-							</span>
-		        		</div>
-		        		<hr/>
-		        		<div>
-		        			<input type="checkbox" name="agree1" id="agree1" required/>
-				            <span class="">만 14세 이상입니다
-								<span class="reqired">(필수)</span>
-							</span>
-		        		</div>
-		        		<div>
-		        			<input type="checkbox" name="agree2" id="agree2" required />
-				            <span class="">이용약관
-								<span class=" ">(필수)</span>
-							</span>
-		        		</div>
-		        		<div>
-		        			<input type="checkbox" name="agree3" required/>
-				            <span class="">개인정보수집 및 이용동의
-					        	<span>(필수)</span>
-					        </span>
-		        		</div>
-		        		<div>
-		        			<input type="checkbox" name="agreeMarketUsage" id="agreeMarketUsage"/>
-				            <span class="">개인정보 마케팅 활용 동의
-								<span class=" ">(선택)</span>
-							</span>
-		        		</div>
-		        		<div>
-		        			<input type="checkbox" name="agreePromotion" id="agreePromotion"/>
-				            <span class="">이벤트, 쿠폰, 특가 알림 메일 및 SMS 등 수신
-				            	<span class="">(선택)</span>
-				            </span>
-		        		</div>
-		        	</label>
-		        </div> -->
 		        <!-- 가입 버튼 -->
 		        <div>
-		        	<input type="submit" class="btn" value="회원가입하기" onclick="sendit()"/>
+		        	<input type="submit" class="btn" value="회원가입하기" onclick="return sendit()"/>
 		        </div>
 		    </form>
 		    <!-- 로그인 페이지로 돌아가기 -->

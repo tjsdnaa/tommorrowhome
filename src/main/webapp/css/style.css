@@ -53,6 +53,10 @@ button {
   cursor: pointer;
   order: 1;
 }
+.fas.fa-shopping-cart {
+    cursor: pointer; /* 클릭 가능한 요소일 때 손가락 커서로 변경 */
+}
+
 
 .fa-shopping-cart {
   margin-right: 0;

@@ -1,43 +1,42 @@
 package com.kh.web.cart.dto;
 
 public class ProductDTO {
-	 private int prodNum;           // PROD_NUM
-	    private String prodCategory;   // PROD_CATEGORY
-	    private String prodName;       // PROD_NAME
-	    private int prodPrice;         // PROD_PRICE
-	    private String prodImage;  
+	 	private int prod_num;           // PROD_NUM
+	    private String prod_category;   // PROD_CATEGORY
+	    private String prod_name;       // PROD_NAME
+	    private int prod_price;         // PROD_PRICE
+	    private String prod_image;
 	    
-	    public String getImageUrl(){
-	    	return prodImage;// PROD_IMAGE
-	    }
-		public int getProdNum() {
-			return prodNum;
+		public int getProd_num() {
+			return prod_num;
 		}
-		public void setProdNum(int prodNum) {
-			this.prodNum = prodNum;
+		public void setProd_num(int prod_num) {
+			this.prod_num = prod_num;
 		}
-		public String getProdCategory() {
-			return prodCategory;
+		public String getProd_category() {
+			return prod_category;
 		}
-		public void setProdCategory(String prodCategory) {
-			this.prodCategory = prodCategory;
+		public void setProd_category(String prod_category) {
+			this.prod_category = prod_category;
 		}
-		public String getProdName() {
-			return prodName;
+		public String getProd_name() {
+			return prod_name;
 		}
-		public void setProdName(String prodName) {
-			this.prodName = prodName;
+		public void setProd_name(String prod_name) {
+			this.prod_name = prod_name;
 		}
-		public int getProdPrice() {
-			return prodPrice;
+		public int getProd_price() {
+			return prod_price;
 		}
-		public void setProdPrice(int prodPrice) {
-			this.prodPrice = prodPrice;
+		public void setProd_price(int prod_price) {
+			this.prod_price = prod_price;
 		}
-		public String getProdImage() {
-			return prodImage;
+		public String getProd_image() {
+			return prod_image;
 		}
-		public void setProdImage(String prodImage) {
-			this.prodImage = prodImage;
-		}
+		public void setProd_image(String prod_image) {
+			this.prod_image = prod_image;
+		}  
+	    
+	    
 }

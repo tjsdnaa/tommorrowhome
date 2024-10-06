@@ -12,7 +12,7 @@ public class CartDAO {
         sqlSessionFactory = SqlMapConfig.getFactory();
     }
 
-    public void createCart(int userId) {
+    public void createCart(String userId) {
         try (SqlSession sqlSession = sqlSessionFactory.openSession(true)) { // true for auto-commit
             CartDTO cart = new CartDTO();
             cart.setUserId(userId);

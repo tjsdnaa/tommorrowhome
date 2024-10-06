@@ -17,10 +17,10 @@ public class CartProdDAO {
     public void addProductToCart(int cartNum, int prodNum, int prodCnt, int prodPrice) {
         try (SqlSession sqlSession = sqlSessionFactory.openSession(true)) { // true for auto-commit
             CartProdDTO cartProd = new CartProdDTO();
-            cartProd.setCartNum(cartNum);
-            cartProd.setProdNum(prodNum);
-            cartProd.setProdCnt(prodCnt);
-            cartProd.setProdPrice(prodPrice);
+            cartProd.setCART_NUM(cartNum);
+            cartProd.setPROD_NUM(prodNum);
+            cartProd.setPROD_CNT(prodCnt);
+            cartProd.setPROD_PRICE(prodPrice);
             sqlSession.insert("CartProdMapper.addProductToCart", cartProd);
         }
     }
@@ -33,8 +33,9 @@ public class CartProdDAO {
 
     public void removeProductFromCart(int cartNum, int prodNum) {
         try (SqlSession sqlSession = sqlSessionFactory.openSession(true)) { // true for auto-commit
-            CartProdDTO cartProd = new CartProdDTO(cartNum, prodNum, 0, 0, null); // 수량과 가격은 0으로 설정
+        	CartProdDTO cartProd = new CartProdDTO(cartNum, prodNum, 0, 0, null); // 수량과 가격은 0으로 설정
             sqlSession.delete("CartProdMapper.removeProductFromCart", cartProd);
+            
         }
     }
 }
