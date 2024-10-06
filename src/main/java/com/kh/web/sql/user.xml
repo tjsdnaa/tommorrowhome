@@ -21,5 +21,4 @@
         FROM USERS
         WHERE USER_ID = #{user_id}
     </select>
-    
 </mapper>
