@@ -47,7 +47,7 @@
           <div class="inner">
             <i class="fas fa-bars searchMenu"></i>
             <div class="header-upper__inner">
-              <div class="header-upper__logo"><a href="">내일의 집</a></div>
+              <div class="header-upper__logo"><a href="/index">내일의 집</a></div>
               <div class="header-upper__nav">
                 <ul>
                   <li class="header-upper__item upper__active">
@@ -65,7 +65,7 @@
   <a href="<%=request.getContextPath()%>/cart/cart.jsp"><i class="fas fa-shopping-cart"></i></a>
   <ul>
     <li><a href="/user/UserLogin.us">로그인</a></li>
-    <li><a href="">회원가입</a></li>
+    <li><a href="/user/UserJoin.us">회원가입</a></li>
     <li>
     <button class="header-upper__serviceBt">고객센터</button>
     <!-- 고객센터 관련 리스트 -->
