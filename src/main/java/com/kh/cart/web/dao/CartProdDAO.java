@@ -23,7 +23,7 @@ public class CartProdDAO {
             cartProd.setPROD_PRICE(prodPrice);
             
             if(!getProductToCart(cartProd)) {
-            	sqlSession.update("CartProdMapper.updateProductToCart", prodCnt);
+            	sqlSession.update("CartProdMapper.updateProductToCart", cartProd);
             }else {
             	sqlSession.insert("CartProdMapper.addProductToCart", cartProd);
             }

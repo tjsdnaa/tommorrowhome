@@ -28,5 +28,6 @@
     <update id = "updateProductToCart" parameterType="com.kh.web.cart.dto.CartProdDTO">
     	UPDATE CART_PROD
 		SET PROD_CNT = #{PROD_CNT}
+		WHERE PROD_NUM =#{PROD_NUM}
     </update>
 </mapper>
