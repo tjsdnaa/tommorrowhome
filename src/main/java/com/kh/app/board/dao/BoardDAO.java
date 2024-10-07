@@ -3,14 +3,11 @@ package com.kh.app.board.dao;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 
 import com.kh.mybatis1.SqlMapConfig;
-
-import jakarta.websocket.Session;
 
 public class BoardDAO {
 	

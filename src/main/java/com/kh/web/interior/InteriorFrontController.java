@@ -31,7 +31,7 @@ public class InteriorFrontController extends HttpServlet{
 			forward = new ActionForward(true, "/interior/interiorlife.jsp");
 		} else if ( requestURI.equals("") ) {
 			// 인테리어생활 게시글 중 QNA 메뉴로 이동
-			forward = new ActionForward(true, "/interior/interiorlife.jsp");
+			forward = new ActionForward(true, "/interior/counsel.jsp");
 			
 		}
 			

@@ -54,6 +54,7 @@
                     <a href="/comunity/home.co">커뮤니티</a>
                   </li>
                   <li class="header-upper__item"><a href="/shopping/ShoppingHome.sh">쇼핑</a></li>
+                  <li class="header-upper__item"><a href="/interior/interiorHome.in">인테리어/생활</a></li>
                 </ul>
               </div>
             </div>
