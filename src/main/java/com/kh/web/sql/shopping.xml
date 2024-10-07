@@ -74,7 +74,7 @@
     
     <insert id="addShoCartNum" parameterType="String">
     	INSERT INTO SHOPPING_CART sc 
-		VALUES (SEQ_SHOPPING_CART,#{userId},0,0);
+		VALUES (SEQ_CART_NUM.nextval,#{userId},0,0)
     </insert>
     
 </mapper>
