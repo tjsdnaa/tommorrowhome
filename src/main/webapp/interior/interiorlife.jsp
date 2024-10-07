@@ -50,11 +50,11 @@
               <div class="header-upper__logo"><a href="/index.jsp">내일의 집</a></div>
               <div class="header-upper__nav">
                 <ul>
-                  <li class="header-upper__item upper__active">
+                  <li class="header-upper__item">
                     <a href="/comunity/home.co">커뮤니티</a>
                   </li>
                   <li class="header-upper__item"><a href="/shopping/ShoppingHome.sh">쇼핑</a></li>
-                  <li class="header-upper__item"><a href="/interior/interiorHome.in">인테리어/생활</a></li>
+                  <li class="header-upper__item upper__active"><a href="/interior/interiorHome.in">인테리어/생활</a></li>
                 </ul>
               </div>
             </div>
@@ -136,10 +136,15 @@
     <div class="inner">
        <nav>
        			<div class="community-menu">
-              <a class="header-lower__item" href="/index.jsp">홈</a>
-              <a class="header-lower__item active" href="/comunity/homeproject.co">집들이</a>
-              <a class="header-lower__item" href="/board/BoardList.bo">게시판</a>
-              <a class="header-lower__item" href="/app/qna/qna.jsp">Q&A</a>
+              <a class="header-lower__item" href="/interior/interiorHome.in">홈</a>
+              <a class="header-lower__item" href="">주거공간시공</a>
+              <a class="header-lower__item" href="">부분시공</a>
+              <a class="header-lower__item" href="">시공자재랭킹</a>
+              <a class="header-lower__item" href="">제품설치</a>
+              <a class="header-lower__item" href="">이사</a>
+              <a class="header-lower__item" href="">집보기체크리스트</a>
+              <a class="header-lower__item" href="">부분시공</a>
+
               </div>
                <!-- 쇼핑 하단 메뉴 추가 -->
            		 <div class="shopping-menu" style="display: none;"> <!-- 기본적으로 숨김 -->
@@ -178,58 +183,16 @@
         this.parentNode.classList.add('upper__active'); // 클릭한 메뉴에 클래스 추가
     });
 </script>
-	<div class="body">
-		<div class="content">
-			<table style="width: 900px; border: 1px;">
-				<tr align="left" valign="middle">
-					<td><div class="board_cnt">전체 13,342</div></td>
-				</tr>
-			</table>
-		<table class="board_part">
-			<% 
-		      for (int i = 0; i < 4; i++) { 
-		    %>
-		    <tr>
-		    <% for (int j = 0; j < 3; j++) { %>
-		      <td>
-		      	<a href="/projects/161663?affect_type=ProjectSelfIndex&amp;affect_id=0">
-		      		<div class="boarditem">
-		      			<div class="">
-		      				<div class="board_img">
-		      					<img src="https://image.ohou.se/i/bucketplace-v2-development/uploads/cards/project/172638468007554477.jpg?w=480&amp;h=321&amp;c=c" 
-		      					srcset="https://image.ohou.se/i/bucketplace-v2-development/uploads/cards/project/172638468007554477.jpg?w=720&amp;h=481.5&amp;c=c 1.5x,https://image.ohou.se/i/bucketplace-v2-development/uploads/cards/project/172638468007554477.jpg?w=960&amp;h=642&amp;c=c 2x,https://image.ohou.se/i/bucketplace-v2-development/uploads/cards/project/172638468007554477.jpg?w=1440&amp;h=963&amp;c=c 3x" 
-		      					alt="" class="e8i2tqm2 css-15urmlp" style="">
-		      						<div class="css-1204udb e8i2tqm1">
-		      							<span type="fill" variant="primary2" class="badge">NEW</span>
-		      						</div>
-		      						<div class="">
-		      							<button type="button" aria-label="scrap 토글 버튼" class=""></button>
-		      						</div>
-		      					</div>
-		      					<p class="board_text">리모델링 없이 순정! 내추럴 스타일링으로만 승부하다!</p>
-		      					<div class="profile">
-		      						<div class="profile_img">
-		      							<img src="https://prs.ohou.se/apne2/home/profileImageUrl/v1-274853009289344.jpg?w=36&amp;h=36&amp;c=c&amp;c=c&amp;w=80&amp;h=80" 
-		      							srcset="https://prs.ohou.se/apne2/home/profileImageUrl/v1-274853009289344.jpg?w=54&amp;h=54&amp;c=c&amp;c=c&amp;w=80&amp;h=80 1.5x,https://prs.ohou.se/apne2/home/profileImageUrl/v1-274853009289344.jpg?w=72&amp;h=72&amp;c=c&amp;c=c&amp;w=80&amp;h=80 2x,https://prs.ohou.se/apne2/home/profileImageUrl/v1-274853009289344.jpg?w=108&amp;h=108&amp;c=c&amp;c=c&amp;w=80&amp;h=80 3x" 
-		      							class="">
-		      						</div>
-		      						<span class="profile_name">이니유니홈</span>
-		      						<span class=" "></span>
-		      					</div>
-		      					<div class="board_seq">
-		      						<span class="seq_scrap">스크랩 8</span>
-		      						<span class="seq_num">조회 1,042</span>
-		      					</div>
-		      				</div>
-		      			</div>
-		      		</a>
-		      	</td>
-		    <% } %>
-		    </tr>
-		    <% } %>
-		</table>
-	</div>
-</div>	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+		
 	<footer class="footer">
           <div class="footer-upper">
             <div>
