@@ -12,7 +12,7 @@
         SELECT cp.*, p.prod_name AS prodName, p.prod_image AS prodImage, p.prod_price AS prodPrice
         FROM CART_PROD cp
         JOIN PRODUCT p ON cp.prod_num = p.prod_num
-        WHERE cp.cart_num = 1
+        WHERE cp.cart_num = #{CART_NUM}
     </select>
     
     <delete id="removeProductFromCart" parameterType="com.kh.web.cart.dto.CartProdDTO">

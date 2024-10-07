@@ -16,10 +16,12 @@ if (session.getAttribute("user_id") == null) {
 }
 %>
 <%
+	String userId = (String) session.getAttribute("user_id");
+
     CartService cartService = new CartService();
     JoinProdDAO joinProdDAO = new JoinProdDAO();
     
-    int cartNum = 1; // 예시값 (사용자 세션에서 가져와야 할 수 있음)
+    int cartNum = joinProdDAO.getCartNum(userId); // 예시값 (사용자 세션에서 가져와야 할 수 있음)
     List<JoinProdDTO> joinProducts = joinProdDAO.getCartProducts(cartNum);
     int totalAmount = 0; // 장바구니 총 금액 초기화
 
@@ -32,8 +34,7 @@ if (session.getAttribute("user_id") == null) {
 %>
 <%
     UsersDAO usersDAO = new UsersDAO();
-    String userId = (String) session.getAttribute("user_id");
-
+    
     // userId가 null인지 확인
     if (userId == null) {
         // 사용자 ID가 null인 경우 적절한 처리 (예: 로그인 페이지로 리다이렉트)
