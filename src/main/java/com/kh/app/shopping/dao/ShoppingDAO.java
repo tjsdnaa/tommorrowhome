@@ -87,13 +87,15 @@ public class ShoppingDAO {
 		return session.selectOne("Shopping.getShoCartSeq",userId); 
 	}
 	
-	// 장바구니 생성
-	public boolean addShoCart(ShoppingCartDTO shocart) {
+	public int getShoCartNum(String userId) {
+		return session.selectOne("Shopping.getShoCartNum",userId); 
+	}
+
+	public boolean addCartNum(String userId) {
 		boolean result = false;
-		if(session.insert("Shopping.addShoCart", shocart) == 1) {
+		if(session.insert("Shopping.addShoCartNum",userId)==1) {
 			result = true;
 		}
-		
 		return result;
 	}
 	public boolean insertCart(CartProdDTO cart) {

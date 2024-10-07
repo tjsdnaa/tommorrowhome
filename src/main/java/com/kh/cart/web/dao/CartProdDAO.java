@@ -21,8 +21,23 @@ public class CartProdDAO {
             cartProd.setPROD_NUM(prodNum);
             cartProd.setPROD_CNT(prodCnt);
             cartProd.setPROD_PRICE(prodPrice);
-            sqlSession.insert("CartProdMapper.addProductToCart", cartProd);
+            
+            if(!getProductToCart(cartProd)) {
+            	sqlSession.update("CartProdMapper.updateProductToCart", prodCnt);
+            }else {
+            	sqlSession.insert("CartProdMapper.addProductToCart", cartProd);
+            }
         }
+    }
+    
+    public boolean getProductToCart(CartProdDTO cdto) {
+    	boolean check = false;
+    	try (SqlSession sqlSession = sqlSessionFactory.openSession(true)) { // true for auto-commit
+    		if(sqlSession.selectOne("CartProdMapper.getCartprodNum", cdto)==null) {
+    			check=true;
+    		}
+        }
+    	return check;
     }
 
     public List<CartProdDTO> getCartProducts(int cartNum) {

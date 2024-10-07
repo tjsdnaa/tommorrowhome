@@ -6,6 +6,7 @@ import java.util.List;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 
+import com.kh.app.shopping.dao.ShoppingDAO;
 import com.kh.mybatis.SqlMapConfig;
 import com.kh.web.cart.dto.CartProdDTO;
 
@@ -24,6 +25,7 @@ public class UsersDAO {
 		boolean result = false;
 
 		if ( session.insert("Users.join", user) == 1) {
+			new ShoppingDAO().addCartNum(user.getUser_id());
 			result = true;
 		}
 		return result;

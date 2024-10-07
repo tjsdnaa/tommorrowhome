@@ -60,16 +60,21 @@
     	SELECT cartprod_seq.currval FROM dual
     </select>
     
-    <!-- 장바구니 생성 -->
-    <insert id="addShoCart" parameterType="shocartdto">
-    	INSERT INTO SHOPPING_CART VALUES
-		(shoppingcart_seq.nextval, #{USER_ID}, #{SHOP_CNT}, #{SHOP_PRICE})
-    </insert>
+	<select id="getShoCartNum" resultType="int">
+    	SELECT CART_NUM FROM SHOPPING_CART sc 
+		WHERE USER_ID = #{USER_ID} AND
+		ROWNUM = 1
+    </select>
     
     <!-- 장바구니에 구매 정보 담기 -->
     <insert id="insertCart" parameterType="cartproddto">
     	INSERT INTO CART_PROD VALUES
 		(#{CART_NUM}, #{PROD_NUM}, #{PROD_CNT}, #{PROD_PRICE})
+    </insert>
+    
+    <insert id="addShoCartNum" parameterType="String">
+    	INSERT INTO SHOPPING_CART sc 
+		VALUES (SEQ_SHOPPING_CART,#{userId},0,0);
     </insert>
     
 </mapper>

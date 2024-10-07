@@ -2,6 +2,7 @@ package com.kh.app.shopping;
 
 import com.kh.app.shopping.dao.ShoppingCartDTO;
 import com.kh.app.shopping.dao.ShoppingDAO;
+import com.kh.cart.web.dao.CartProdDAO;
 import com.kh.web.action.Action;
 import com.kh.web.action.ActionForward;
 import com.kh.web.cart.dto.CartProdDTO;
@@ -16,7 +17,7 @@ public class ShoppingCartInsertAction implements Action {
 	public ActionForward execute(HttpServletRequest request, HttpServletResponse response) {
 		ActionForward forward = new ActionForward();
 		ShoppingDAO sdao = new ShoppingDAO();
-		ShoppingCartDTO shocart = new ShoppingCartDTO();
+		CartProdDAO cdao = new CartProdDAO();
 		CartProdDTO cart = new CartProdDTO();
 		
 		// 세션에서 유저 ID 확인하는 코드 추가
@@ -40,26 +41,12 @@ public class ShoppingCartInsertAction implements Action {
 		int productCount = Integer.parseInt(request.getParameter("productCount"));
 		int prod_price = Integer.parseInt(request.getParameter("prod_price"));
 		
-		int totalPrice = prod_price * productCount;
-		
-		shocart.setSHOP_PRICE(totalPrice);
-		shocart.setSHOP_CNT(productCount);
-		shocart.setUSER_ID(userId);
-		cart.setPROD_PRICE(prod_price);
 		
 		
-		if(sdao.addShoCart(shocart)) {
-			int cartNum = sdao.getShoCartSeq((String) session.getAttribute("user_id"));
-			cart.setCART_NUM(cartNum);
-			cart.setPROD_NUM(prod_num);
-			cart.setPROD_CNT(productCount);
-			cart.setPROD_PRICE(prod_price);
-			
-			sdao.insertCart(cart);
-			
-			forward.setRedirect(true);
-			forward.setPath("/cart/cart.jsp");
-	    }
+		cdao.addProductToCart(sdao.getShoCartNum(userId), prod_num, productCount, prod_price);
+		forward.setRedirect(true);
+		forward.setPath("/cart/cart.jsp");
+	    
 	    
 	    return forward;
 	}

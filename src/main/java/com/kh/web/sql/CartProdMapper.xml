@@ -5,7 +5,7 @@
 <mapper namespace="CartProdMapper">
     <insert id="addProductToCart" parameterType="com.kh.web.cart.dto.CartProdDTO">
         INSERT INTO CART_PROD (CART_NUM, PROD_NUM, PROD_CNT, PROD_PRICE)
-        VALUES (#{cartNum}, #{prodNum}, #{prodCnt}, #{prodPrice})
+        VALUES (#{CART_NUM}, #{PROD_NUM}, #{PROD_CNT}, #{PROD_PRICE})
     </insert>
     
     <select id="getCartProducts" parameterType="int" resultType="com.kh.web.cart.dto.CartProdDTO">
@@ -19,4 +19,14 @@
         DELETE FROM CART_PROD WHERE CART_NUM = #{cartNum} AND PROD_NUM = #{prodNum}
     </delete>
     
+    <select id = "getCartprodNum" parameterType="int" resultType = "int">
+    	SELECT PROD_NUM 
+    	FROM CART_PROD cp 
+    	WHERE PROD_NUM = #{PROD_NUM} AND CART_NUM = #{CART_NUM}
+    </select>
+    
+    <update id = "updateProductToCart" parameterType="com.kh.web.cart.dto.CartProdDTO">
+    	UPDATE CART_PROD
+		SET PROD_CNT = #{PROD_CNT}
+    </update>
 </mapper>
