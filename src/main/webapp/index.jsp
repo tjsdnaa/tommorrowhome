@@ -54,6 +54,7 @@
                     <a href="/comunity/home.co">커뮤니티</a>
                   </li>
                   <li class="header-upper__item"><a href="/shopping/ShoppingHome.sh">쇼핑</a></li>
+                  <li class="header-upper__item"><a href="/interior/interiorHome.in">인테리어/생활</a></li>
                 </ul>
               </div>
             </div>
@@ -136,7 +137,6 @@
        <nav>
        			<div class="community-menu">
               <a class="header-lower__item active" href="/index.jsp">홈</a>
-              <a class="header-lower__item" href="/comunity/homeproject.co">집들이</a>
               <a class="header-lower__item" href="/board/BoardList.bo">게시판</a>
               <a class="header-lower__item" href="/app/qna/qna.jsp">Q&A</a>
               </div>

@@ -1,4 +1,4 @@
-package com.kh.web.comunity;
+package com.kh.web.interior;
 
 import java.io.IOException;
 
@@ -10,8 +10,8 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
-@WebServlet("*.co")
-public class ComunityFrontController extends HttpServlet{
+@WebServlet("*.in")
+public class InteriorFrontController extends HttpServlet{
 	// doGet, doPost, doProcess
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -25,13 +25,14 @@ public class ComunityFrontController extends HttpServlet{
 		
 		String requestURI = req.getRequestURI();
 		ActionForward forward = null;
-		// 커뮤니티 게시글 중 집들이 메뉴로 이동
-		if ( requestURI.equals("/comunity/homeproject.co") ) {
+		// 인테리어/생활 메뉴로 이동  
+		if ( requestURI.equals("/interior/interiorHome.in") ) {
 			// System.out.println("front !!");
-			forward = new ActionForward(true, "/comunity/welcomehouse.jsp");
+			forward = new ActionForward(true, "/interior/interiorlife.jsp");
 		} else if ( requestURI.equals("") ) {
-			// 집들이 글쓰기
-			forward = new ComunityWriteOkAction().execute(req, resp);
+			// 인테리어생활 게시글 중 QNA 메뉴로 이동
+			forward = new ActionForward(true, "/interior/interiorlife.jsp");
+			
 		}
 			
 		
