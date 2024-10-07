@@ -47,11 +47,11 @@
           <div class="inner">
             <i class="fas fa-bars searchMenu"></i>
             <div class="header-upper__inner">
-              <div class="header-upper__logo"><a href="">내일의 집</a></div>
+              <div class="header-upper__logo"><a href="/index.jsp">내일의 집</a></div>
               <div class="header-upper__nav">
                 <ul>
                   <li class="header-upper__item upper__active">
-                    <a href="">커뮤니티</a>
+                    <a href="/comunity/home.co">커뮤니티</a>
                   </li>
                   <li class="header-upper__item"><a href="/shopping/ShoppingHome.sh">쇼핑</a></li>
                 </ul>
@@ -135,7 +135,8 @@
     <div class="inner">
        <nav>
        			<div class="community-menu">
-              <a class="header-lower__item active" href="">홈</a>
+              <a class="header-lower__item active" href="/index.jsp">홈</a>
+              <a class="header-lower__item" href="/comunity/homeproject.co">집들이</a>
               <a class="header-lower__item" href="/board/BoardList.bo">게시판</a>
               <a class="header-lower__item" href="/app/qna/qna.jsp">Q&A</a>
               </div>
