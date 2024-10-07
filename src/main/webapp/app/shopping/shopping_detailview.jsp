@@ -150,9 +150,9 @@
 							</button> -->
 						
 						<a href="#">
-							<button class="button_buy" onclick="buyNow">
-								바로구매
-							</button>
+    					<button class="button_buy" onclick="buyNow(event)">
+      					  바로구매
+   						 </button>
 						</a>
 					</div>
 		</form>
@@ -485,10 +485,14 @@
 	    window.location.href = "?productCount=" + productCount; // 장바구니 페이지로 이동
 	}
 	
-	// 바로구매 onclick
-	function buyNow() {
+	function buyNow(event) {
+	    event.preventDefault(); // 기본 클릭 이벤트 방지
 	    const productCount = document.getElementById("hiddenProductCount").value;
-	    window.location.href = "/shopping/Cartadd.sh?productCount=" + productCount; // 바로구매 페이지로 이동
+	    const prodNum = document.querySelector("input[name='prod_num']").value; // 제품 번호 가져오기
+	    const prodPrice = document.querySelector("input[name='prod_price']").value; // 제품 가격 가져오기
+	    
+	    // 주문 페이지로 이동
+	    window.location.href = "/order/order.jsp?prod_num=" + prodNum + "&prod_price=" + prodPrice + "&productCount=" + productCount; 
 	}
 
 	// 별점 매기기

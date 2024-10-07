@@ -11,6 +11,7 @@
 	
     List<JoinProdDTO> joinProducts = new JoinProdDAO().getCartProducts(cartNum);
     int totalAmount = 0; // 장바구니 총 금액 초기화
+    boolean isLoggedIn = session.getAttribute("user_id") != null; // 로그인 여부 체크
 %>
 <!DOCTYPE html>
 <html lang="ko">
@@ -43,9 +44,13 @@
             <div class="header-right">
                 <ul style="display: flex; margin: 0; padding: 0; list-style: none;">
                     <li style="margin-right: 20px;"><a href="cart.jsp">장바구니</a></li>
-                    <li style="margin-right: 20px;"><a href="/user/UserLogin.us">로그인</a></li>
-                    <li style="margin-right: 20px;"><a href="/user/UserJoin.us">회원가입</a></li>
-                    <li><a href="customerService.jsp">고객센터</a></li>
+                    <% if (isLoggedIn) { %>
+                        <li style="margin-right: 20px;"><a href="/user/UserLogout.us">로그아웃</a></li>
+                        <li><a href="customerService.jsp">고객센터</a></li>
+                    <% } else { %>
+                        <li style="margin-right: 20px;"><a href="/user/UserLogin.us">로그인</a></li>
+                        <li style="margin-right: 20px;"><a href="/user/UserJoin.us">회원가입</a></li>
+                    <% } %>
                 </ul>
             </div>
         </div>

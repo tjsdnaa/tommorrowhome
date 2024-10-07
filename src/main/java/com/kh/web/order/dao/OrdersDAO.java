@@ -15,7 +15,7 @@ public class OrdersDAO {
     // 주문 추가
     public void addOrder(OrdersDTO order) {
         try (SqlSession sqlSession = sqlSessionFactory.openSession()) {
-            sqlSession.insert("Orders.addOrder", order);
+            sqlSession.insert("com.kh.web.order.dao.OrdersDAO.addOrder", order); // namespace 추가
             sqlSession.commit(); // 커밋
         }
     }
@@ -23,14 +23,14 @@ public class OrdersDAO {
     // 주문 조회
     public OrdersDTO getOrder(int orderNum) {
         try (SqlSession sqlSession = sqlSessionFactory.openSession()) {
-            return sqlSession.selectOne("Orders.getOrder", orderNum);
+            return sqlSession.selectOne("com.kh.web.order.dao.OrdersDAO.getOrder", orderNum); // namespace 추가
         }
     }
 
-	public void insertOrder(OrdersDTO order) {
-		try (SqlSession sqlSession = sqlSessionFactory.openSession(true)) {
-            sqlSession.insert("Orders.insertOrder", order);
+    // 주문 추가
+    public void insertOrder(OrdersDTO order) {
+        try (SqlSession sqlSession = sqlSessionFactory.openSession(true)) {
+            sqlSession.insert("com.kh.web.order.dao.OrdersDAO.insertOrder", order); // namespace 추가
         }
-		
-	}
+    }
 }

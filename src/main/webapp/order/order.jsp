@@ -9,6 +9,13 @@
 <%@page import="com.kh.web.order.dao.OrdersDAO"%>
 <%@page import="com.kh.web.order.dao.OrderProdDAO"%>
 <%@page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%
+    String prodNum = request.getParameter("prod_num");
+    String prodPrice = request.getParameter("prod_price");
+    String productCount = request.getParameter("productCount");
+
+    // prodNum, prodPrice, productCount를 이용하여 필요한 데이터 로드하기
+%>
 <% 
 if (session.getAttribute("user_id") == null) {
     response.sendRedirect("/user/login.jsp"); // 로그인 페이지로 리디렉션
@@ -80,32 +87,36 @@ if (session.getAttribute("user_id") == null) {
 </script>
 </head>
 <body>
-    <header>
-        <div class="header-wrapper">
-            <div class="logo">
-                <h1><a href="${pageContext.request.contextPath}/index.jsp">내일의 집</a></h1>
-            </div>
-            <nav>
-                <ul>
-                    <li><a href="community.jsp">커뮤니티</a></li>
-                    <li><a href="productList.jsp">쇼핑</a></li>
-                    <li><a href="interior.jsp">인테리어/생활</a></li>
-                </ul>
-                <form action="search.jsp" method="get" class="search-form">
-                    <input type="text" name="search" placeholder="쇼핑 검색">
-                    <button type="submit">검색</button>
-                </form>
-            </nav>
-            <div class="header-right">
-                <ul style="display: flex; margin: 0; padding: 0; list-style: none;">
-                    <li style="margin-right: 20px;"><a href="cart.jsp">장바구니</a></li>
-                    <li style="margin-right: 20px;"><a href="/user/UserLogin.us">로그인</a></li>
-                    <li style="margin-right: 20px;"><a href="/user/UserJoin.us">회원가입</a></li>
-                    <li><a href="customerService.jsp">고객센터</a></li>
-                </ul>
-            </div>
+   <header>
+    <div class="header-wrapper">
+        <div class="logo">
+            <h1><a href="${pageContext.request.contextPath}/index.jsp">내일의 집</a></h1>
         </div>
-    </header>
+        <nav>
+            <ul>
+                <li><a href="community.jsp">커뮤니티</a></li>
+                <li><a href="productList.jsp">쇼핑</a></li>
+                <li><a href="interior.jsp">인테리어/생활</a></li>
+            </ul>
+            <form action="search.jsp" method="get" class="search-form">
+                <input type="text" name="search" placeholder="쇼핑 검색">
+                <button type="submit">검색</button>
+            </form>
+        </nav>
+        <div class="header-right">
+            <ul style="display: flex; margin: 0; padding: 0; list-style: none;">
+                <% if (session.getAttribute("user_id") != null) { %>
+                    <li style="margin-right: 20px;"><a href="cart.jsp">장바구니</a></li>
+                    <li style="margin-right: 20px;"><a href="/user/UserLogout.us">로그아웃</a></li>
+                    <li><a href="customerService.jsp">고객센터</a></li>
+                <% } else { %>
+                    <li style="margin-right: 20px;"><a href="/user/login.jsp">로그인</a></li>
+                    <li style="margin-right: 20px;"><a href="/user/register.jsp">회원가입</a></li>
+                <% } %>
+            </ul>
+        </div>
+    </div>
+</header>
 
     <div class="checkout">
         <h1>결제하기</h1>
@@ -147,7 +158,9 @@ if (session.getAttribute("user_id") == null) {
         </div>
 
         <h2>주문자 정보</h2>
-        <form action="checkoutAction" method="post">
+       <form action="<%=request.getContextPath()%>/order/checkoutAction" method="post" onsubmit="return validateForm()">
+    <input type="hidden" name="totalPrice" value="<%= totalAmount %>">
+    <input type="hidden" name="totalProdCnt" value="<%= joinProducts.size() %>">
 	    <label for="userId">사용자 ID:</label>
 	    <input type="text" id="userId" name="userId" value="<%= session.getAttribute("user_id") != null ? session.getAttribute("user_id") : "" %>" readonly>
 	
@@ -203,6 +216,49 @@ if (session.getAttribute("user_id") == null) {
         <p>고객센터: 1670-0876 (09:00 ~ 18:00)</p>
         <p>이메일: contact@bucketplace.net</p>
     </footer>
+    <script>
+		function validateForm() {
+		    // 우편번호
+		    var postcode = document.getElementById("sample6_postcode").value;
+		    if (postcode === "") {
+		        alert("우편번호를 입력해 주세요.");
+		        return false;
+		    }
+		
+		    // 상세주소
+		    var detailAddress = document.getElementById("sample6_detailAddress").value;
+		    if (detailAddress === "") {
+		        alert("상세주소를 입력해 주세요.");
+		        return false;
+		    }
+		
+		    // 전화번호
+		    var tel = document.getElementById("tel").value;
+		    var telPattern = /^(010-\d{4}-\d{4}|010\d{8})$/; // 전화번호 형식 정규식
+		    if (!telPattern.test(tel)) {
+		        alert("전화번호 형식이 올바르지 않습니다. 예: 010-1234-5678 또는 01012345678");
+		        return false;
+		    }
+		    return true; // 다른 벨리데이션 통과 시 true 반환
+		
+		    // 요청사항
+		    var req = document.getElementById("req").value;
+		    if (req.length > 100) { // 요청사항 최대 길이 검사 (예: 100자)
+		        alert("요청 사항은 100자 이내로 입력해 주세요.");
+		        return false;
+		    }
+		
+		    // 모든 유효성 검사를 통과하면 폼을 제출
+		    return true;
+		}
+		
+		// 양식 제출 시 유효성 검사 함수 호출
+		document.querySelector("form").onsubmit = function() {
+		    return validateForm();
+		};
+</script>
+
+    
 </body>
 <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 </html>

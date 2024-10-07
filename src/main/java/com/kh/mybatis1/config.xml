@@ -20,8 +20,10 @@
   </environments>
   <mappers>
   	<mapper resource="com/kh/web/sql1/board.xml"/>
+  	 <mapper resource="com/kh/web/sql/OrdersMapper.xml"/> 
+
   </mappers>
-  
+  	
 </configuration>
 
 

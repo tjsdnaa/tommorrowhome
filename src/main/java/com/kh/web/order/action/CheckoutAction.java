@@ -36,11 +36,11 @@ public class CheckoutAction implements Action {
         // DAO를 통해 DB에 주문 정보 저장
         OrdersDAO ordersDAO = new OrdersDAO();
         ordersDAO.insertOrder(order);
+        request.setAttribute("message", "구매가 완료되었습니다!"); // 메시지를 추가
 
-        // OrderProdDTO 객체와 OrderProdDAO를 사용하여 주문 상품 정보를 저장
-        // 이 부분은 장바구니에서 상품 정보를 가져와서 반복문으로 저장해야 함
-
-        forward.setPath("/orderConfirmation.jsp"); // 주문 확인 페이지로 리다이렉트
+        // 주문 확인 페이지로 포워드
+        forward.setPath("/order/orderConfirmation.jsp"); // 주문 확인 페이지로 리다이렉트
+        forward.setRedirect(false); // 포워드 방식
         return forward;
     }
 }
