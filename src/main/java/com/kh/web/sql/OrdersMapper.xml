@@ -5,9 +5,11 @@
 <mapper namespace="com.kh.web.order.dao.OrdersDAO">
 
 <insert id="insertOrder" parameterType="com.kh.web.order.dto.OrdersDTO">
-    INSERT INTO ORDERS (user_id, total_price, total_prod_cnt, addr_detail, zip_code, tel, req)
-    VALUES (#{userId}, #{totalPrice}, #{totalProdCnt}, #{addrDetail}, #{zipCode}, #{tel}, #{req})
+    INSERT INTO ORDERS (ORDER_NUM, USER_ID, TOTAL_PRICE, ADDRDETAIL, ZIPCODE, TEL, REQ, TOTAL_PROD_CNT) 
+    VALUES (SEQ_ORDER_NUM.NEXTVAL, #{userId}, #{totalPrice}, #{addrDetail}, #{zipCode}, #{tel}, #{req}, #{totalProdCnt})
 </insert>
+
+
 
 
 </mapper>

@@ -31,6 +31,7 @@
         <mapper resource="com/kh/web/sql/JoinProd.xml"/>
         <mapper resource="com/kh/web/sql/user.xml"/>
         <mapper resource="com/kh/web/sql/shopping.xml"/>
+        <mapper resource="com/kh/web/sql/OrdersMapper.xml"/> 
     </mappers>
 </configuration>
 
