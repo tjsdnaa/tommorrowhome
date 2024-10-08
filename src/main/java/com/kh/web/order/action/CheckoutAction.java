@@ -55,7 +55,7 @@ public class CheckoutAction implements Action {
 
             // 주문 성공 메시지 설정
             request.setAttribute("message", "구매가 완료되었습니다! 주문 번호: " + orderNum);
-
+            request.setAttribute("orderNum", orderNum);
             // 주문 확인 페이지로 포워드
             forward.setPath("/order/orderConfirmation.jsp");
             forward.setRedirect(false); // 포워드 방식으로 이동
