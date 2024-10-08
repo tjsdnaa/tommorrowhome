@@ -61,4 +61,14 @@ public class JoinProdDAO {
     	return cartNum;
         
     }
+    
+    //prodNum에 따른 JoinProd 값 가져오기
+    public JoinProdDTO getJoin(int PROD_NUM){	
+    	JoinProdDTO jdto = new JoinProdDTO();
+    	try (SqlSession sqlSession = sqlSessionFactory.openSession()) {
+    		jdto = sqlSession.selectOne("Join.getJoin", PROD_NUM);
+        }
+    	return jdto;
+        
+    }
 }

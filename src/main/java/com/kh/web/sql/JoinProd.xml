@@ -33,4 +33,10 @@
         WHERE b.CART_NUM = 1 <!-- CART_NUM에 따라 필터링 -->
     </select>
     
+    <select id="getJoin" parameterType="_int" resultType="joinproddto">
+        SELECT PROD_IMAGE ,PROD_NAME , 0 AS PROD_CNT , PROD_PRICE ,PROD_NUM 
+		FROM PRODUCT p 
+		WHERE PROD_NUM= #{PROD_NUM}
+    </select>
+    
 </mapper>
