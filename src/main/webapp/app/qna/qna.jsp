@@ -360,7 +360,7 @@ ul, li, a, button {
         }
 
         .category.selected {
-            background-color: #007bff;
+            background-color: #35c5f0;
             color: white;
         }
 

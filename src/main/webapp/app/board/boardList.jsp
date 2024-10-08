@@ -389,7 +389,7 @@ ul, li, a, button {
 
         .search-box button {
             padding: 8px 16px;
-            background-color: #007bff;
+            background-color: #35c5f0;
             color: white;
             border: none;
             margin-left: 5px;
@@ -403,7 +403,7 @@ ul, li, a, button {
 
         .btn-write {
             padding: 8px 16px;
-            background-color: #007bff;
+            background-color:#35c5f0;
             color: white;
             border: none;
             border-radius: 4px;
