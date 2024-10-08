@@ -527,10 +527,7 @@ ul, li, a, button {
     });
 </script>
 	
-	<div class="category-container">
-	    <div class="category selected" onclick="goToPage('qna')">QnA</div>
-	    <div class="category" onclick="location.href='/board/BoardList.bo'">자유게시판</div>
-	</div>
+	
 
 	<div class="question-container">
 	    <div class="question" onclick="toggleAnswer('answer1')">
