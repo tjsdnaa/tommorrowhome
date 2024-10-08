@@ -1,23 +1,46 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
-<html>
+<html lang="ko">
 <head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
-<meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
     <title>주문 완료</title>
-    <link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/css/styless.css">
+    <style>
+        .complete-message {
+            text-align: center;
+            margin-top: 100px;
+        }
+        .complete-message h2 {
+            font-size: 24px;
+            color: #333;
+        }
+        .complete-message p {
+            font-size: 18px;
+            margin-top: 20px;
+        }
+        .btn-confirm {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 10px 20px;
+            background-color: #007bff; /* 파란색 배경 */
+            color: white; /* 흰색 글씨 */
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+    </style>
+    <script>
+        function goToIndex() {
+            // 메인 페이지로 이동
+            window.location.href = "/index.jsp";
+        }
+    </script>
 </head>
 <body>
-	<div class="confirmation">
-        <h1>구매가 완료되었습니다!</h1>
-        <p>주문해주셔서 감사합니다.</p>
-        <button onclick="location.href='<%=request.getContextPath()%>/index.jsp'">확인</button>
+    <div class="complete-message">
+        <h2>주문이 완료되었습니다!</h2>
+        
+        <button class="btn-confirm" onclick="goToIndex()">확인</button>
     </div>
-    <footer>
-        <p>© 2024 오늘의 집. All Rights Reserved.</p>
-    </footer>
 </body>
 </html>

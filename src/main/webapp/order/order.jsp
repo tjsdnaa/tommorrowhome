@@ -13,7 +13,6 @@
     String prodNum = request.getParameter("prod_num");
     String prodPrice = request.getParameter("prod_price");
     String productCount = request.getParameter("productCount");
-
     // prodNum, prodPrice, productCount를 이용하여 필요한 데이터 로드하기
 %>
 <% 
@@ -23,16 +22,24 @@ if (session.getAttribute("user_id") == null) {
 }
 %>
 <%
-	String userId = (String) session.getAttribute("user_id");
+   String userId = (String) session.getAttribute("user_id");
 
     CartService cartService = new CartService();
     JoinProdDAO joinProdDAO = new JoinProdDAO();
     
     int cartNum = joinProdDAO.getCartNum(userId); // 예시값 (사용자 세션에서 가져와야 할 수 있음)
-    List<JoinProdDTO> joinProducts = joinProdDAO.getCartProducts(cartNum);
+    List<JoinProdDTO> joinProducts = joinProdDAO.getCartProducts(cartNum); // 장바구니
+    JoinProdDTO jdto=null;
     int totalAmount = 0; // 장바구니 총 금액 초기화
-
-    if (joinProducts != null && !joinProducts.isEmpty()) {
+   
+    if(prodNum!=null){
+       jdto = joinProdDAO.getJoin(Integer.parseInt(prodNum)) ;
+       jdto.setPROD_PRICE(Integer.parseInt(prodPrice));
+       jdto.setPROD_CNT(Integer.parseInt(productCount));
+       totalAmount=jdto.getPROD_PRICE()*jdto.getPROD_CNT();
+       
+    }
+    else if (joinProducts != null && !joinProducts.isEmpty()) {
         for (JoinProdDTO product : joinProducts) {
             int totalPrice = product.getPROD_CNT() * product.getPROD_PRICE();
             totalAmount += totalPrice;
@@ -130,7 +137,17 @@ if (session.getAttribute("user_id") == null) {
                 <th>가격</th>
             </tr>
             <%
-            if (joinProducts != null && !joinProducts.isEmpty()) {
+            if(jdto!=null){
+            %>
+            <tr>
+                <td><img src="<%= jdto.getPROD_IMAGE() %>" alt="<%= jdto.getPROD_NAME() %>" style="width: 100px; height: auto;"></td>
+                <td><%= jdto.getPROD_NAME() %></td>
+                <td><%= jdto.getPROD_CNT() %></td>
+                <td><%= jdto.getPROD_CNT() * jdto.getPROD_PRICE() %>원</td>
+            </tr>
+            <%   
+            }
+            else if (joinProducts != null && !joinProducts.isEmpty()) {
                 for (JoinProdDTO product : joinProducts) {
             %>
             <tr>
@@ -160,21 +177,21 @@ if (session.getAttribute("user_id") == null) {
         <h2>주문자 정보</h2>
        <form action="<%=request.getContextPath()%>/order/checkoutAction" method="post" onsubmit="return validateForm()">
     <input type="hidden" name="totalPrice" value="<%= totalAmount %>">
-    <input type="hidden" name="totalProdCnt" value="<%= joinProducts.size() %>">
+    <input type="hidden" name="totalProdCnt" value="<%= joinProducts.stream().mapToInt(JoinProdDTO::getPROD_CNT).sum() %>">
 	    <label for="userId">사용자 ID:</label>
 	    <input type="text" id="userId" name="userId" value="<%= session.getAttribute("user_id") != null ? session.getAttribute("user_id") : "" %>" readonly>
 	
 	    <label for="zipCode">우편번호:</label>
 	    <div class="postcode-wrapper">
-	        <input type="text" id="sample6_postcode" placeholder="우편번호">
+	        <input type="text" id="sample6_postcode" name="zipCode" placeholder="우편번호">
 	        <input type="button" onclick="sample6_execDaumPostcode()" value="우편번호 찾기">
 	    </div>
 	    
 	    <label for="addr">주소:</label>
-	    <input type="text" id="sample6_address" placeholder="주소"><br>
+	    <input type="text" id="sample6_address" name="addr" placeholder="주소">
 	     
 	    <label for="addrDetail">상세주소:</label>
-	    <input type="text" id="sample6_detailAddress" placeholder="상세주소">
+	   <input type="text" id="sample6_detailAddress" name="addrDetail" placeholder="상세주소">
 	 
 	    <label for="tel">전화번호:</label>
 	    <input type="text" id="tel" name="tel" value="<%= phoneNumber != null ? phoneNumber : "" %>" required><br>
