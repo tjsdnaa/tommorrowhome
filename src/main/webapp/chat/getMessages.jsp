@@ -95,6 +95,9 @@
             <!-- 채팅 메시지가 여기에 표시됨 -->
             <%
                 String userID = request.getParameter("userID");
+            	
+            	String loginID = (String) session.getAttribute("user_id");
+        		System.out.println("loginID: " +userID);
 
                 // Null 또는 빈 문자열 또는 undefined 상태인 경우를 체크
                 if (userID != null && !userID.isEmpty()) {
@@ -103,7 +106,7 @@
                     if (chat != null && !chat.isEmpty()) {
                         for (int i = 0; i < chat.size(); i++) {
                             // 보낸 사람과 받은 사람에 따라 메시지 스타일 다르게 설정
-                            String messageClass = (chat.get(i).getSendID().equals(userID)) ? "sender" : "receiver";
+                            String messageClass = (chat.get(i).getSendID().equals(loginID)) ? "sender" : "receiver";
                             out.println("<div class='chat-message " + messageClass + "'>" 
                                         + chat.get(i).getSendID() + ": " + chat.get(i).getMessage() + "</div>");
                         }

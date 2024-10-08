@@ -10,6 +10,9 @@
 	cdto.setUserID(userID);
 	cdto.setSendID(sendID);
 	cdto.setMessage(message);
-    new ChatDAO().insertChat(cdto);
+	if(message!=""){
+		System.out.println("message:" + message);
+		new ChatDAO().insertChat(cdto);
+	}
 
 %>
