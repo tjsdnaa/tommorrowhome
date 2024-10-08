@@ -29,10 +29,11 @@ if (session.getAttribute("user_id") == null) {
     
     int cartNum = joinProdDAO.getCartNum(userId); // 예시값 (사용자 세션에서 가져와야 할 수 있음)
     List<JoinProdDTO> joinProducts = joinProdDAO.getCartProducts(cartNum);
-    JoinProdDTO jdto = joinProdDAO.getJoin(Integer.parseInt(prodNum)) ;
+    JoinProdDTO jdto=null;
     int totalAmount = 0; // 장바구니 총 금액 초기화
 	
     if(prodNum!=null){
+    	jdto = joinProdDAO.getJoin(Integer.parseInt(prodNum)) ;
     	jdto.setPROD_PRICE(Integer.parseInt(prodPrice));
     	jdto.setPROD_CNT(Integer.parseInt(productCount));
     	totalAmount=jdto.getPROD_PRICE()*jdto.getPROD_CNT();
@@ -136,7 +137,7 @@ if (session.getAttribute("user_id") == null) {
                 <th>가격</th>
             </tr>
             <%
-            if(prodNum!=null){
+            if(jdto!=null){
             %>
             <tr>
                 <td><img src="<%= jdto.getPROD_IMAGE() %>" alt="<%= jdto.getPROD_NAME() %>" style="width: 100px; height: auto;"></td>
