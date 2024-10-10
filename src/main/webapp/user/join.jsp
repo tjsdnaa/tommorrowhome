@@ -119,11 +119,11 @@
 		    box-sizing: border-box;
 		    border-radius: 6px 6px 6px 6px;
 		}
-		#btn_id {
-			font-weight: bold;
-		    background-color: #35c5f0; /* 파란색 배경 */
-		    color: white; /* 흰색 글씨 */
-		    border: none;
+			#btn_id {
+		    font-weight: bold;
+		    background-color: #35c5f0 !important; /* 파란색 배경 */
+		    color: white !important; /* 흰색 글씨 */
+		    border: none ;
 		    padding: 12px;
 		    font-size: 16px;
 		    width: 100%;
@@ -133,6 +133,12 @@
 		}
 		#btn_id:hover {
 		    background-color: #2aa2c6; /* 더 진한 파란색 배경 */
+		}
+		
+		/* 포커스 및 활성 상태 추가 */
+		#btn_id:focus {
+		    outline: none; /* 포커스 시 기본 테두리 제거 */
+		    background-color: #35c5f0; /* 포커스 시 배경색 유지 */
 		}
 		/* 회원가입 버튼에 대한 스타일 */
 		.btn {
@@ -147,10 +153,7 @@
 		    margin-top: 10px;
 		    transition: background-color 0.3s;
 		}
-		#btn_id:focus {
-   		 outline: none; /* 포커스 상태에서 아웃라인 제거 */
-   		 background-color: #35c5f0; /* 포커스 상태에서도 기본 배경색 유지 */
-}
+		
 		
 		.btn:hover {
 		    background-color: #2aa2c6;
