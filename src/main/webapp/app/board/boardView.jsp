@@ -740,10 +740,7 @@ ul, li, a, button {
         this.parentNode.classList.add('upper__active'); // 클릭한 메뉴에 클래스 추가
     });
 </script>
-    <div class="category-container">
-        <div class="category" onclick="goToPage('qna')">QnA</div>
-        <div class="category selected" onclick="goToPage('board')">자유게시판</div>
-    </div>
+
 
     <c:set var="board" value="${requestScope.board}" />
     <c:set var="replylist" value="${requestScope.replylist}" />
