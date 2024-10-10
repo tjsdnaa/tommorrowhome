@@ -140,7 +140,7 @@
 			<div class="inner">
 		      <nav>
 	       			<div class="community-menu" style="display: none;">
-		              <a class="header-lower__item" href="">홈</a>
+		              <a class="header-lower__item" href="/index.jsp">홈</a>
 		              <a class="header-lower__item" href="/board/BoardList.bo">게시판</a>
 		              <a class="header-lower__item" href="/app/qna/qna.jsp">Q&amp;A</a>
 		              </div>

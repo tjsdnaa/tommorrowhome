@@ -486,9 +486,9 @@ ul, li, a, button {
 			<div class="inner">
 		       <nav>
 	       			<div class="community-menu">
-		              <a class="header-lower__item active" href="">홈</a>
+		              <a class="header-lower__item" href="/index.jsp">홈</a>
 		              <a class="header-lower__item" href="/board/BoardList.bo">게시판</a>
-		              <a class="header-lower__item" href="/app/qna/qna.jsp">Q&amp;A</a>
+		              <a class="header-lower__item active" href="/app/qna/qna.jsp">Q&amp;A</a>
 		              </div>
 		               <!-- 쇼핑 하단 메뉴 추가 -->
 		           		 <div class="shopping-menu" style="display: none;"> <!-- 기본적으로 숨김 -->

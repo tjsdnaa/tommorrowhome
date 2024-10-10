@@ -533,13 +533,13 @@ ul, li, a, button {
 			<div class="inner">
 		       <nav>
 	       			<div class="community-menu">
-		              <a class="header-lower__item active" href="">홈</a>
-		              <a class="header-lower__item" href="/board/BoardList.bo">게시판</a>
+		              <a class="header-lower__item" href="">홈</a>
+		              <a class="header-lower__item active" href="/board/BoardList.bo">게시판</a>
 		              <a class="header-lower__item" href="/app/qna/qna.jsp">Q&amp;A</a>
 		              </div>
 		               <!-- 쇼핑 하단 메뉴 추가 -->
 		           		 <div class="shopping-menu" style="display: none;"> <!-- 기본적으로 숨김 -->
-		                <a class="header-lower__item active" href="/shopping/ShoppingHome.sh">홈</a>
+		                <a class="header-lower__item" href="/shopping/ShoppingHome.sh">홈</a>
 		                <a class="header-lower__item" href="/shopping/ShoppingCategory.sh?prod_category=furniture">카테고리</a>
 		            </div>
 				</nav>
