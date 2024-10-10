@@ -7,11 +7,18 @@
 <%@ page import="com.kh.web.cart.dto.ProductDTO" %>
 <%
    CartService cartService = new CartService();
+	boolean isLoggedIn = session.getAttribute("user_id") != null; // 로그인 여부 체크
+	
+	if (!isLoggedIn) {
+        // 로그인하지 않은 상태일 경우 처리
+        response.sendRedirect("/user/login.jsp"); // 로그인 페이지로 리다이렉트
+        return;
+    }
+	
     int cartNum = new JoinProdDAO().getCartNum((String)session.getAttribute("user_id")); // 예시값
-   
     List<JoinProdDTO> joinProducts = new JoinProdDAO().getCartProducts(cartNum);
     int totalAmount = 0; // 장바구니 총 금액 초기화
-    boolean isLoggedIn = session.getAttribute("user_id") != null; // 로그인 여부 체크
+    
 %>
 <!DOCTYPE html>
 <html lang="ko">
@@ -369,14 +376,14 @@ ul, li, a, button {
                    <i class="fas fa-shopping-cart"></i>
                 </a>
                 <ul>
-                <%
+                  <%
                        // 세션에 사용자 정보가 있는지 확인
                        String user_id = (String)session.getAttribute("user_id");
                        if (user_id == null) {
                            // 로그인되지 않은 상태
                    %>
                         <li><a href="/user/UserLogin.us">로그인</a></li>
-                      <li><a href="/user/UserJoin.us">회원가입</a></li>
+                       <li><a href="/user/UserJoin.us">회원가입</a></li>
                    <%
                        } else {
                            // 로그인된 상태
