@@ -349,7 +349,7 @@ li {
 	margin: 0px 0px 27px;
 	font-size: 20px;
 	font-weight: 700;
-	color: #000;
+	color: #35c5f0;
 }
 
 .title, .tree{
@@ -409,7 +409,6 @@ li {
 .category_other_title{
 	width: 160px;
 	height: auto;
-	padding-top: 30px;
 	margin-top: 15px;
 	margin-bottom: 30px;
 	font-size: 20px;
