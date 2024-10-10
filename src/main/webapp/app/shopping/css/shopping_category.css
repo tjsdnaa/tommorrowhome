@@ -147,7 +147,7 @@ body{
 
 .header_wrap .header-upper__lists ul{
 	display: inline-block;
-	hegiht: auto;
+	height: auto;
 }
 
 .header_wrap .header-upper__lists ul li a {
@@ -312,6 +312,7 @@ a {
 a:hover{
 	color: gray;
 	transition: color 0.2s ease;
+	cursor: pointer;
 }
 
 ul {

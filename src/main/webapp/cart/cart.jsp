@@ -153,6 +153,7 @@
 
 ul, li, a, button {
     all: unset;
+    cursor: pointer;
 }
 
 .header-upper__serviceBt {

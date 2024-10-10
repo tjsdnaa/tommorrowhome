@@ -164,7 +164,7 @@ ul, li, a, button {
 
 .header-upper__lists ul{
    display: inline-block;
-   hegiht: auto;
+   height: auto;
 }
 
 .header-upper__lists ul li a {
@@ -390,6 +390,7 @@ ul, li, a, button {
             color: #003322; /* 링크 색상 유지 */
             text-decoration: none; /* Remove underline */
             transition: color 0.3s; /* Smooth transition for link hover effect */
+            cursor: pointer;
         }
         a:hover {
             text-decoration: none;
