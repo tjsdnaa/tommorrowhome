@@ -38,6 +38,11 @@ function sendit(){
 			    password.focus();
 			    return false;
 			}
+			if (password.value !== password_re.value) {
+			    alert("비밀번호가 일치하지 않습니다.");
+			    password_re.focus();
+			    return false;
+			}
 			// 이름 빈값 처리
 			if (name.value == "") {
 				alert("이름을 입력해주세요");
@@ -92,20 +97,7 @@ function sendit(){
 	
 }
 
-document.getElementById("user_id").addEventListener("input", function() {
-	let user_id = document.getElementById("user_id").value;
-	let btn_id = document.getElementById("btn_id");
-	
-	if (user_id!=null && user_id.trim() != "") {
-		btn_id.style.color = "#35c5f0";        // 텍스트 색상
-		btn_id.style.borderColor = "#35c5f0";  // 테두리 색상
-		btn_id.style.backgroundColor = "white";
-	} else {
-		btn_id.style.color = "";        
-		btn_id.style.borderColor = ""; 
-		btn_id.style.backgroundColor = "";
-	}
-});
+
 			
 
 // 아이디 중복확인
@@ -126,7 +118,7 @@ function checkId() {
         if (xhr.readyState === 4 && xhr.status === 200) {
             // 서버에서 반환된 결과를 alert으로 표시
             alert(xhr.responseText);
-            // 이 부분에서 CSS 변경을 하지 않음
+            
         }
     };
     xhr.send();

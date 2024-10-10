@@ -121,8 +121,8 @@
 		}
 			#btn_id {
 		    font-weight: bold;
-		    background-color: #35c5f0 !important; /* 파란색 배경 */
-		    color: white !important; /* 흰색 글씨 */
+		    background-color: #35c5f0;  /* 파란색 배경 */
+		    color: white ; /* 흰색 글씨 */
 		    border: none ;
 		    padding: 12px;
 		    font-size: 16px;
