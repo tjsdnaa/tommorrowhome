@@ -22,7 +22,7 @@
 	</select>
 		
 	<insert id="insertBoard" parameterType="boarddto">
-		INSERT INTO BOARD values(SEQ_BOARD_ID.nextval,#{userid}, '1', '1', #{title}, #{content})
+		INSERT INTO BOARD values(SEQ_BOARD_ID.nextval,#{userid}, SEQ_BOARD_ID2.NEXTVAL, '1', #{title}, #{content})
    </insert>
    
 	<select id="getDetail" parameterType="_int" resultType="boarddto">

@@ -607,7 +607,7 @@ ul, li, a, button {
                 onmouseover="this.style.background = '#bbdefb'"
                 onmouseout="this.style.background = ''">
                 <td height="23px">
-                    ${board.boardid}
+                    ${board.BOARDSEQ}
                 </td>
                 <td height="23px" class ='title'>
                     <a href="/board/BoardView.bo?boardid=${board.boardid}">${board.title}</a>
