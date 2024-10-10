@@ -21,12 +21,12 @@ function sendit() {
             return false;
         }
         // 아이디 영문자만 허용 체크
-        const idPattern = /^[a-zA-Z]+$/; // 영문자만 허용하는 정규 표현식
-        if (!idPattern.test(user_id.value)) {
-            alert("아이디는 영문자만 입력 가능합니다.");
-            user_id.focus();
-            return false;
-        }
+		const idPattern = /^[a-zA-Z0-9]+$/; // 영문자와 숫자만 허용하는 정규 표현식
+		       if (!idPattern.test(user_id.value)) {
+		           alert("아이디는 영문자와 숫자만 입력 가능합니다.");
+		           user_id.focus();
+		           return false;
+		       }
         // 비밀번호 빈값 처리
         if (password.value == "") {
             alert("비밀번호를 입력해주세요");
@@ -109,6 +109,14 @@ function checkId() {
     // 아이디가 입력되지 않았을 때 처리
     if (user_id === "") {
         alert("아이디를 입력해주세요.");
+        document.querySelector('#user_id').focus();
+        return; // 중복확인 요청 중단
+    }
+
+    // 아이디 영문자와 숫자만 허용 체크
+    const idPattern = /^[a-zA-Z0-9]+$/; // 영문자와 숫자만 허용하는 정규 표현식
+    if (!idPattern.test(user_id)) {
+        alert("아이디는 영문자와 숫자만 입력 가능합니다.");
         document.querySelector('#user_id').focus();
         return; // 중복확인 요청 중단
     }

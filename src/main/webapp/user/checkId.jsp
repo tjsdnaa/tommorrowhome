@@ -7,9 +7,9 @@
     if (user_id == null || user_id.trim().isEmpty()) {
         out.print("아이디를 입력해주세요.");
     } else {
-        // 아이디 영문자만 허용 체크
-        if (!user_id.matches("^[a-zA-Z]+$")) {
-            out.print("아이디는 영문자만 입력 가능합니다.");
+        // 아이디 영문자와 숫자만 허용 체크
+        if (!user_id.matches("^[a-zA-Z0-9]+$")) {
+            out.print("아이디는 영문자와 숫자만 입력 가능합니다.");
         } else {
             boolean isDuplicate = new UsersDAO().checkId(user_id);
             if (isDuplicate) {

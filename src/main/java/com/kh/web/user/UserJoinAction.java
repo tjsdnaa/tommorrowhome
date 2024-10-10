@@ -25,16 +25,17 @@ public class UserJoinAction implements Action{
 		user.setTel(req.getParameter("tel"));
 		
 		// dao에서 MyBatis로 커넥션된 db의 insert처리되면
-		if ( udao.join(user) ) {
-			// 회원가입 성공처리
-			forward.setRedirect(true);
-			forward.setPath("/user/login.jsp");
-		} else {
-			// 회원가입 실패처리
-			forward.setRedirect(true);
-			forward.setPath("/user/join.jsp");
-		}
-		return forward;
+		if (udao.join(user)) {
+	        // 회원가입 성공처리
+	        forward.setRedirect(true);
+	        forward.setPath("/user/login.jsp");
+	    } else {
+	        // 회원가입 실패처리
+	        req.setAttribute("errorMessage", "회원가입에 실패하였습니다. 다시 시도해주세요."); // 에러 메시지 설정
+	        forward.setRedirect(false); // 포워드로 설정
+	        forward.setPath("/user/join.jsp"); // 회원가입 페이지로 이동
+	    }
+	    return forward;
 	}
 
 	
