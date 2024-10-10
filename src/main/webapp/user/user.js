@@ -33,10 +33,10 @@ function sendit(){
 				return false;
 			}
 			// 비밀번호 == 비밀번호 확인 처리
-			if (password.value != password_re.value) {
-				alert("비밀번호 확인을 다시 작성해주세요");
-				password_re.focus();
-				return false;
+			if (password.value.length < 8 || !/(?=.*[a-zA-Z])(?=.*[0-9])/.test(password.value)) {
+			    alert("비밀번호는 8자리 이상이며 영문과 숫자를 포함해야 합니다.");
+			    password.focus();
+			    return false;
 			}
 			// 이름 빈값 처리
 			if (name.value == "") {
@@ -110,15 +110,23 @@ document.getElementById("user_id").addEventListener("input", function() {
 
 // 아이디 중복확인
 function checkId() {
-	
-    const user_id = document.querySelector('#user_id').value;
-	
+    const user_id = document.querySelector('#user_id').value.trim();
+    
+    // 아이디가 입력되지 않았을 때 처리
+    if (user_id === "") {
+        alert("아이디를 입력해주세요.");
+        document.querySelector('#user_id').focus();
+        return; // 중복확인 요청 중단
+    }
+    
+    // 아이디 중복확인 요청
     const xhr = new XMLHttpRequest();
     xhr.open('GET', 'checkId.jsp?user_id=' + encodeURIComponent(user_id), true);
     xhr.onreadystatechange = function () {
         if (xhr.readyState === 4 && xhr.status === 200) {
             // 서버에서 반환된 결과를 alert으로 표시
             alert(xhr.responseText);
+            // 이 부분에서 CSS 변경을 하지 않음
         }
     };
     xhr.send();

@@ -119,18 +119,21 @@
 		    box-sizing: border-box;
 		    border-radius: 6px 6px 6px 6px;
 		}
-		#btn_id{
+		#btn_id {
 			font-weight: bold;
-		    background-color: rgb(247, 248, 250);
-		    color: rgb(194, 200, 204);
-		    border: 2px solid  rgb(194, 200, 204);
-		    border-color: rgb(218, 220, 224);
+		    background-color: #35c5f0; /* 파란색 배경 */
+		    color: white; /* 흰색 글씨 */
+		    border: none;
 		    padding: 12px;
-		    font-size: 17px;
+		    font-size: 16px;
 		    width: 100%;
 		    border-radius: 6px;
 		    margin-top: 10px;
-		 }
+		    transition: background-color 0.3s;
+		}
+		#btn_id:hover {
+		    background-color: #2aa2c6; /* 더 진한 파란색 배경 */
+		}
 		/* 회원가입 버튼에 대한 스타일 */
 		.btn {
 			font-weight: bold;
@@ -144,6 +147,10 @@
 		    margin-top: 10px;
 		    transition: background-color 0.3s;
 		}
+		#btn_id:focus {
+   		 outline: none; /* 포커스 상태에서 아웃라인 제거 */
+   		 background-color: #35c5f0; /* 포커스 상태에서도 기본 배경색 유지 */
+}
 		
 		.btn:hover {
 		    background-color: #2aa2c6;
@@ -194,8 +201,8 @@
 		        	</label>
 		        </div>
 		        <!-- 아이디 중복인증 -->
-		        <div class="btn_element">
-		        	<button class="btn_id" id="btn_id" onclick="checkId()">아이디 중복확인</button>		        	
+		       <div class="btn_element">
+		        	<button type="button" class="btn" id="btn_id" onclick="checkId()">아이디 중복확인</button>		        	
 		        </div>
 		        <!-- 비밀번호 입력 -->
 		        <div class="input_element">
