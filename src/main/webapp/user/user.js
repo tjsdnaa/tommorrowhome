@@ -95,7 +95,9 @@ function sendit() {
     if (validation()) {
         alert("회원가입이 완료되었습니다.");
         frm.submit();
-    }
+    } 		else {
+		       return false; // 검증 실패 시 제출 중단
+		   }
 }
 
 
