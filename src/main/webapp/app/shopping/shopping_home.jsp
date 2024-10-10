@@ -41,10 +41,10 @@
 				
 					<div class="header-uppper__nav">
 						<ul>
-							<li class="header-upper__item upper__active">
+							<li class="header-upper__item">
 								<a href="">커뮤니티</a>
 							</li>
-							<li class="header-upper__item">
+							<li class="header-upper__item upper__active">
 								<a href="">쇼핑</a>
 							</li>
 						</ul>
@@ -128,13 +128,13 @@
 		<div class="header-lower">
 			<div class="inner">
 		       <nav>
-	       			<div class="community-menu">
-		              <a class="header-lower__item active" href="">홈</a>
+	       			<div class="community-menu" style="display: none;">
+		              <a class="header-lower__item" href="">홈</a>
 		              <a class="header-lower__item" href="/board/BoardList.bo">게시판</a>
 		              <a class="header-lower__item" href="/app/qna/qna.jsp">Q&amp;A</a>
-		              </div>
-		               <!-- 쇼핑 하단 메뉴 추가 -->
-		           		 <div class="shopping-menu" style="display: none;"> <!-- 기본적으로 숨김 -->
+		             </div>
+		             
+		           	<div class="shopping-menu">
 		                <a class="header-lower__item active" href="/shopping/ShoppingHome.sh">홈</a>
 		                <a class="header-lower__item" href="/shopping/ShoppingCategory.sh?prod_category=furniture">카테고리</a>
 		            </div>
@@ -143,18 +143,18 @@
 		</div>
 	</div>
 <script>
-    // 커뮤니티 메뉴 클릭 시 하단 메뉴 표시
+    // 쇼핑 메뉴 클릭 시 하단 메뉴 표시
     document.querySelector('.header-upper__item.upper__active a').addEventListener('click', function(event) {
         event.preventDefault(); // 기본 링크 동작 방지
-        document.querySelector('.community-menu').style.display = 'block'; // 커뮤니티 메뉴 보이기
-        document.querySelector('.shopping-menu').style.display = 'none'; // 쇼핑 메뉴 숨기기
+        document.querySelector('.shopping-menu').style.display = 'block'; // 쇼핑 메뉴 숨기기
+        document.querySelector('.community-menu').style.display = 'none'; // 커뮤니티 메뉴 보이기
     });
 
-    // 쇼핑 메뉴 클릭 시 하단 메뉴 표시
-    document.querySelector('.header-upper__item:last-child a').addEventListener('click', function(event) {
+    // 커뮤니티 메뉴 클릭 시 하단 메뉴 표시
+    document.querySelector('.header-upper__item:nth-child(1) a').addEventListener('click', function(event) {
         event.preventDefault(); // 기본 링크 동작 방지
-        document.querySelector('.shopping-menu').style.display = 'block'; // 쇼핑 메뉴 보이기
-        document.querySelector('.community-menu').style.display = 'none'; // 커뮤니티 메뉴 숨기기
+        document.querySelector('.shopping-menu').style.display = 'none'; // 쇼핑 메뉴 보이기
+        document.querySelector('.community-menu').style.display = 'block'; // 커뮤니티 메뉴 숨기기
     });
     document.querySelector('.header-upper__item.upper__active a').addEventListener('click', function(event) {
         event.preventDefault(); // 기본 링크 동작 방지
@@ -162,8 +162,8 @@
         this.parentNode.classList.add('upper__active'); // 클릭한 메뉴에 클래스 추가
     });
 
-    // 쇼핑 메뉴 클릭 시 활성화
-    document.querySelector('.header-upper__item:last-child a').addEventListener('click', function(event) {
+    // 커뮤니티 메뉴 클릭 시 활성화
+    document.querySelector('.header-upper__item:nth-child(1) a').addEventListener('click', function(event) {
         event.preventDefault(); // 기본 링크 동작 방지
         document.querySelector('.header-upper__item.upper__active').classList.remove('upper__active');
         this.parentNode.classList.add('upper__active'); // 클릭한 메뉴에 클래스 추가
