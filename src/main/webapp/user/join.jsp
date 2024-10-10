@@ -152,6 +152,7 @@
 		    border-radius: 6px;
 		    margin-top: 10px;
 		    transition: background-color 0.3s;
+		    cursor: pointer; 
 		}
 		
 		
