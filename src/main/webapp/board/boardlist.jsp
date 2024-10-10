@@ -372,6 +372,7 @@ ul, li, a, button {
         .title {
             text-align: left;
             padding-left: 10px;
+            cursor: pointer;
         }
         tr:hover {
             background-color: #e0f7fa; /* Highlight entire row on hover */
