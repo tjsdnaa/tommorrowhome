@@ -35,7 +35,9 @@
 	height:auto;
 	margin: a auto;
 }
-
+.title{
+	cursor: pointer;
+}
 .inner {
     max-width: 1136px;
     margin: 0 auto;
@@ -607,7 +609,7 @@ ul, li, a, button {
                 <td height="23px">
                     ${board.boardid}
                 </td>
-                <td height="23px">
+                <td height="23px" class ='title'>
                     <a href="/board/BoardView.bo?boardid=${board.boardid}">${board.title}</a>
                 </td>
                 <td height="23px">

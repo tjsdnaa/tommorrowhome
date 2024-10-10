@@ -24,13 +24,13 @@
         }
         
         .chat-message.sender {
-            background-color: #e1f5fe;
+            background-color: #40C4FF;
             text-align: left;
             margin-left: auto; /* 보낸 메시지는 오른쪽 정렬 */
         }
         
         .chat-message.receiver {
-            background-color: #c8e6c9;
+            background-color: #E0F2F1;
             text-align: left;
             margin-right: auto; /* 받은 메시지는 왼쪽 정렬 */
         }
