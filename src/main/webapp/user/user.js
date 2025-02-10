@@ -144,4 +144,5 @@ function checkId() {
         }
     };
     xhr.send();
+	
 }
